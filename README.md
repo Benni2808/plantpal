@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Rubocop Options
+
+>Simple format <br>
+>`rubocop --format simple`
+
+> Simple format written to result.txt <br>
+> `rubocop --format simple -o result.txt`
+
+> Useful for CI environments. It will create an HTML report <br>
+>`rubocop --format html -o rubocop.html`
