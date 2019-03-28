@@ -30,6 +30,8 @@ gem "rmagic"
 gem "devise"
 # for permalinks
 gem "friendly_id"
+# brita can be used in APIs and full rails apps
+gem "brita"
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
