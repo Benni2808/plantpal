@@ -24,18 +24,17 @@ gem 'jbuilder', '~> 2.5'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-# image processing with image magick
-# gem 'rmagick', '~> 3.0.0'
+
 # devise for login
-# gem 'devise'
+gem 'devise'
 # for permalinks
-# gem 'friendly_id'
+gem 'friendly_id'
 # brita can be used in APIs and full rails apps
-# gem 'brita'
+gem 'brita'
 # uses elasticsearch with many more options for fulltext search, e.g. for misspellings
-# gem 'searchkick'
+gem 'searchkick'
 # admin backend
-# gem 'activeadmin'
+gem 'activeadmin'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
@@ -46,8 +45,12 @@ gem 'bootsnap', '>= 1.4.1', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
-  # for testing
+
+  # TODO: get infos about capybara -> for testing
   # gem 'capybara'
+  
+  # - UML diagram generation for Rails projects, capable of analyzing existing models and controllers
+  gem 'railroady'
 end
 
 group :development do
@@ -59,16 +62,15 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # better errors
-  # gem 'better_errors'
-  # gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  # FIXME: can't start server with bullet -> read docu
   # bullet - helps you improve your usage of activerecord queries
   # gem 'bullet'
   # annotate - inserts the db schema as comments in your model.rb file
-  # gem 'annotate'
-  # - UML diagram generation for Rails projects, capable of analyzing existing models and controllers
-  # gem 'railroady'
+  gem 'annotate'
   # opne emails in browser
-  # TODO: gem "letter_opener"
+  gem 'letter_opener'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
