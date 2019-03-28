@@ -34,6 +34,8 @@ gem "friendly_id"
 gem "brita"
 # uses elasticsearch with many more options for fulltext search, e.g. for misspellings
 gem "searchkick"
+# admin backend
+gem "activeadmin"
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
