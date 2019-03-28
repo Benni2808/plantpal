@@ -50,6 +50,8 @@ group :development do
   gem "bullet"
   # annotate - inserts the db schema as comments in your model.rb file
   gem "annotate"
+  # - UML diagram generation for Rails projects, capable of analyzing existing models and controllers
+  gem "railroady"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
