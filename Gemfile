@@ -26,6 +26,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 # image processing with image magick
 gem "rmagic"
+# devise for login
+gem "devise"
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
