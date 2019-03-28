@@ -65,6 +65,8 @@ group :development do
   gem "annotate"
   # - UML diagram generation for Rails projects, capable of analyzing existing models and controllers
   gem "railroady"
+  # opne emails in browser
+  # TODO: gem "letter_opener"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
