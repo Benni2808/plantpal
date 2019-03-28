@@ -28,6 +28,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem "rmagic"
 # devise for login
 gem "devise"
+# for permalinks
+gem "friendly_id"
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
