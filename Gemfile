@@ -25,19 +25,19 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 # image processing with image magick
-gem "rmagic"
+gem 'rmagic'
 # devise for login
-gem "devise"
+gem 'devise'
 # for permalinks
-gem "friendly_id"
+gem 'friendly_id'
 # brita can be used in APIs and full rails apps
-gem "brita"
+gem 'brita'
 # uses elasticsearch with many more options for fulltext search, e.g. for misspellings
-gem "searchkick"
+gem 'searchkick'
 # admin backend
-gem "activeadmin"
+gem 'activeadmin'
 # for testing
-gem "capybara"
+gem 'capybara'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
@@ -59,14 +59,14 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # better errors
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
   # bullet - helps you improve your usage of activerecord queries
-  gem "bullet"
+  gem 'bullet'
   # annotate - inserts the db schema as comments in your model.rb file
-  gem "annotate"
+  gem 'annotate'
   # - UML diagram generation for Rails projects, capable of analyzing existing models and controllers
-  gem "railroady"
+  gem 'railroady'
   # opne emails in browser
   # TODO: gem "letter_opener"
 end
