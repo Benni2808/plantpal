@@ -32,6 +32,8 @@ gem "devise"
 gem "friendly_id"
 # brita can be used in APIs and full rails apps
 gem "brita"
+# uses elasticsearch with many more options for fulltext search, e.g. for misspellings
+gem "searchkick"
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
