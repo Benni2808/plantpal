@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 # image processing with image magick
-gem 'rmagic'
+# gem 'rmagick', '~> 3.0.0'
 # devise for login
 gem 'devise'
 # for permalinks
@@ -36,8 +36,6 @@ gem 'brita'
 gem 'searchkick'
 # admin backend
 gem 'activeadmin'
-# for testing
-gem 'capybara'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
@@ -48,6 +46,8 @@ gem 'bootsnap', '>= 1.4.1', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # for testing
+  gem 'capybara'
 end
 
 group :development do
