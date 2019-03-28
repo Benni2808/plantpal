@@ -36,6 +36,8 @@ gem "brita"
 gem "searchkick"
 # admin backend
 gem "activeadmin"
+# for testing
+gem "capybara"
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
