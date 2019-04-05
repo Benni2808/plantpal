@@ -9,3 +9,6 @@ AllCops:
 # other configuration
 Rails:
   Enabled: true
+  
+Metrics/LineLength:
+  Enabled: false
