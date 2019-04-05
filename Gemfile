@@ -24,7 +24,6 @@ gem 'jbuilder', '~> 2.5'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-
 # devise for login
 gem 'devise'
 # for permalinks
@@ -48,7 +47,7 @@ group :development, :test do
 
   # TODO: get infos about capybara -> for testing
   # gem 'capybara'
-  
+
   # - UML diagram generation for Rails projects, capable of analyzing existing models and controllers
   gem 'railroady'
 end
@@ -70,7 +69,12 @@ group :development do
   # annotate - inserts the db schema as comments in your model.rb file
   gem 'annotate'
   # opne emails in browser
+  gem 'dokku-cli'
   gem 'letter_opener'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
