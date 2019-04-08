@@ -12,6 +12,7 @@
       <th>Sunneed</th>
       <th>Place</th>
       <th>Love</th>
+      <th>User.id</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= plant.sunNeed %></td>
         <td><%= plant.place %></td>
         <td><%= plant.love %></td>
+        <td><%= plant.user_id %></td>
         <td><%= link_to 'Show', plant %></td>
         <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
         <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>

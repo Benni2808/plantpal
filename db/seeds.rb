@@ -18,6 +18,11 @@
 #         email: 'test1@example.at',
 #         password: 'slfjsflj2441!j',
 #         nickName: 'suppiduppipflanzenboyy'
+#     },
+#     {
+#         email: 'benjamin.joham@gmail.com',
+#         password: 'test1234',
+#         nickName: 'benni'
 #     }
 # ])
 
@@ -29,7 +34,8 @@ Plant.create([
         waterCurrent: 600,
         sunNeed: 2.5,
         place: 'bedroom',
-        love: 6
+        love: 6,
+        user_id: 2
     },
     {
         realName: 'sfsf',
@@ -38,6 +44,7 @@ Plant.create([
         waterCurrent: 600,
         sunNeed: 2.5,
         place: 'living room',
-        love: 3
+        love: 3,
+        user_id: 1
     }
 ])
