@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Plants</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Realname</th>
+      <th>Nickname</th>
+      <th>Waterneed</th>
+      <th>Watercurrent</th>
+      <th>Sunneed</th>
+      <th>Place</th>
+      <th>Love</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @plants.each do |plant| %>
+      <tr>
+        <td><%= plant.realName %></td>
+        <td><%= plant.nickName %></td>
+        <td><%= plant.waterNeed %></td>
+        <td><%= plant.waterCurrent %></td>
+        <td><%= plant.sunNeed %></td>
+        <td><%= plant.place %></td>
+        <td><%= plant.love %></td>
+        <td><%= link_to 'Show', plant %></td>
+        <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
+        <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Plant', new_plant_path %>

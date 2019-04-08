@@ -3,6 +3,7 @@
 
 <% if current_user%>
 <%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
+<h2> user name = <%= current_user.email.split('@')[0]%></h2>
 <% else %>
     <%= link_to 'Sign up', new_user_registration_path %>
     <br>
