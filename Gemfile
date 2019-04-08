@@ -69,9 +69,14 @@ group :development do
   # annotate - inserts the db schema as comments in your model.rb file
   gem 'annotate'
   # open emails in browser
+  gem 'dokku-cli'
   gem 'letter_opener'
   # use dokku
   gem 'dokku-cli'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 group :production do
