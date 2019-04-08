@@ -1,84 +1,87 @@
-body {
-  background-color: #fff;
-  color: #333;
-  margin: 33px;
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
+@import "fonts";
+@import "variables";
+@import "global";
 
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
-}
+// body {
+//   background-color: $color__white;
+//   color: $color__black;
+//   font-family: Mukta, verdana, sans-serif;
+//   margin: 2em;
+//   font-size: 1.2em;
+//   line-height: 1.3em;
+// }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
+// p, ol, ul, td {
+//   font-family: Mukta, verdana, sans-serif;
+//   font-size: 1em;
+//   line-height: 1.2em;
+// }
 
-a {
-  color: #000;
+// // pre {
+// //   background-color: #eee;
+// //   padding: 10px;
+// //   font-size: 11px;
+// // }
 
-  &:visited {
-    color: #666;
-  }
+// a {
+//   color: $color__black;
 
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
+//   &:visited {
+//     color: $color__green--light;
+//   }
 
-th {
-  padding-bottom: 5px;
-}
+//   &:hover {
+//     color: $color__green--light;
+//   }
+// }
 
-td {
-  padding: 0 5px 7px;
-}
+// th {
+//   padding-bottom: 5px;
+// }
 
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
-  }
-}
+// td {
+//   padding: 0 5px 7px;
+// }
 
-#notice {
-  color: green;
-}
+// div {
+//   &.field, &.actions {
+//     margin-bottom: 10px;
+//   }
+// }
 
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
+// #notice {
+//   color: $color__green--dark;
+// }
 
-#error_explanation {
-  width: 450px;
-  border: 2px solid red;
-  padding: 7px 7px 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+// .field_with_errors {
+//   padding: 2px;
+//   background-color: red;
+//   display: table;
+// }
 
-  h2 {
-    text-align: left;
-    font-weight: bold;
-    padding: 5px 5px 5px 15px;
-    font-size: 12px;
-    margin: -7px -7px 0;
-    background-color: #c00;
-    color: #fff;
-  }
+// #error_explanation {
+//   width: 450px;
+//   border: 2px solid red;
+//   padding: 7px 7px 0;
+//   margin-bottom: 20px;
+//   background-color: #f0f0f0;
 
-  ul li {
-    font-size: 12px;
-    list-style: square;
-  }
-}
+//   h2 {
+//     text-align: left;
+//     font-weight: bold;
+//     padding: 5px 5px 5px 15px;
+//     font-size: 12px;
+//     margin: -7px -7px 0;
+//     background-color: #c00;
+//     color: #fff;
+//   }
 
-label {
-  display: block;
-}
+//   ul li {
+//     font-size: 12px;
+//     list-style: square;
+//   }
+// }
+
+// label {
+//   display: block;
+// }
