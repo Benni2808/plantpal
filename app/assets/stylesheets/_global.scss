@@ -219,3 +219,17 @@ h1{
     }
   }
 }
+
+.links{
+  margin: 2rem 0;
+
+    a{
+      color: $color__black;
+      text-decoration: none;
+      transition: 50ms ease-in-out;
+      
+      &:hover{
+          color: $color__green--dark;
+      }
+    }
+}
