@@ -37,9 +37,9 @@ gem 'activeadmin'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
-
+# gem 'carrierwave', '~> 1.0'
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.1', require: false
+gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -71,12 +71,9 @@ group :development do
   # open emails in browser
   gem 'dokku-cli'
   gem 'letter_opener'
+  gem 'solargraph'
   # use dokku
   gem 'dokku-cli'
-end
-
-group :production do
-  gem 'rails_12factor'
 end
 
 group :production do

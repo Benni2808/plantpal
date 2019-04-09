@@ -82,6 +82,3 @@ test:
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
-  database: mmp2b_production
-  username: mmp2b
-  password: <%= ENV['MMP2B_DATABASE_PASSWORD'] %>
