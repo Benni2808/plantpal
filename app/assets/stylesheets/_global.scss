@@ -78,7 +78,7 @@ label {
   display: block;
 }
 
-header{
+.navigation{
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
@@ -87,7 +87,7 @@ header{
   display: grid;
   grid: 1fr 1fr;
 
-  div{
+  &__logo{
     grid-column: 1/2;
     margin: 1.2rem 0.8rem;
     font-size: 2rem;
@@ -95,16 +95,16 @@ header{
     margin-left: 2rem;
   }
 
-  nav{
+  &__nav{
     grid-column: 2/3;
     justify-self: end;
     margin-right: 2rem;
     text-transform: uppercase;
 
-    ul{
+    &__ul{
       list-style: none;
       
-      li{
+      &__li{
         display: inline-block;
         margin: 1.2rem 0.8rem;
         
@@ -120,6 +120,101 @@ header{
             color: $color__green--dark;
           }
         }
+      }
+    }
+  }
+}
+
+h1{
+  font-weight: 800;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+
+.page-content{
+  margin: 2.5rem;
+}
+
+// Forms
+.new_user{
+
+  &__container{
+    margin: 2rem 0;
+    width: 20rem;
+    height: auto;
+    
+    label{
+      color: $color__black;
+      width: 100%;
+      font-size: 1.5rem;
+      line-height: 2.75rem;
+      font-weight: 400;
+    }
+    input{
+      width: 100%;
+      border: 0;
+      outline: 0;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid $color__black;
+      box-shadow: none;
+      color: #111;
+      font-size: 1rem;
+      font-weight: 300;
+
+      &:invalid {
+        outline: 0;
+        color: $color__pink--dark;
+        border-color: $color__pink--dark;
+      }
+      &:focus,
+      &:valid {
+        border-color: $color__green--light;
+      }
+    }
+  }
+
+  &__mail{
+    margin-top: 1.5rem;
+  }
+
+  &__pw{
+    label{
+      display: inline-block;
+      width: fit-content;
+    }
+    &__p{
+      font-size: 1rem;
+      line-height: 1.2rem;
+      font-weight: 300;
+      display: inline-block;
+      width: fit-content;
+    }
+    input{
+      display: block;
+    }
+  }
+  &__pw-confirmation{
+  }
+  &__remember-me{
+    
+    label, input{
+      display: inline-block;
+      width: fit-content;
+      color: $color__black;
+      font-size: 1.2rem;
+    }
+  }
+  &__submit-button{
+    input{
+      background-color: $color__green--light;
+      color: $color__white;
+      padding: 0.5rem 0.8rem;
+      transition: 300ms ease-in-out;
+      text-transform: uppercase;
+      border-radius: 2px;
+
+      &:hover{
+        background-color: $color__green--dark;
       }
     }
   }
