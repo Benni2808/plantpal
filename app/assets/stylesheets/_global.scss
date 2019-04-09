@@ -93,6 +93,10 @@ label {
     font-size: 2rem;
     font-weight: 600;
     margin-left: 2rem;
+    a{
+      text-decoration: none; 
+      color:$color__white;
+    }
   }
 
   &__nav{
