@@ -173,7 +173,8 @@ h3{
   display: grid;
   justify-content: center;
 }
-.notice, .alert{
+
+#notice, .notice, .alert{
   display: grid;
   justify-content: center;
 }
@@ -307,4 +308,4 @@ h3{
   .new_user__container {
     width: 16rem;
   }
-}
+ }
