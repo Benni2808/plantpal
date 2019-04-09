@@ -62,11 +62,8 @@
   <body>
   <div class="contentarea">
 	<h1>
-		MDN - WebRTC: Still photo capture demo
+		Mach ein Foto von deiner Pflanze!
 	</h1>
-	<p>
-		This example demonstrates how to set up a media stream using your built-in webcam, fetch an image from that stream, and create a PNG using that image.
-	</p>
   <div class="camera">
     <video id="video">Video stream not available.</video>
     <button id="startbutton">Take photo</button> 
@@ -75,14 +72,8 @@
   </canvas>
   <div class="output">
     <img id="photo" alt="The screen capture will appear in this box."> 
-  </div>
-
-</div>
-    <h1>Pages#picture</h1>
-    <button id="capture">Capture</button>
     <script>
      // using https://github.com/mdn/samples-server/blob/master/s/webrtc-capturestill/capture.js
-        (function() {
       // The width and height of the captured photo. We will set the
       // width to the value defined here, but the height will be
       // calculated based on the aspect ratio of the input stream.
@@ -102,7 +93,7 @@
       var canvas = null;
       var photo = null;
       var startbutton = null;
-
+        
       function startup() {
         video = document.getElementById('video');
         canvas = document.getElementById('canvas');
