@@ -68,10 +68,19 @@ group :development do
   # gem 'bullet'
   # annotate - inserts the db schema as comments in your model.rb file
   gem 'annotate'
-  # opne emails in browser
+  # open emails in browser
   gem 'dokku-cli'
   gem 'letter_opener'
+<<<<<<< HEAD
   gem 'solargraph'
+=======
+  # use dokku
+  gem 'dokku-cli'
+end
+
+group :production do
+  gem 'rails_12factor'
+>>>>>>> 290ff89adde3fe9054dcc33fbbdaa33352412abd
 end
 
 group :production do
