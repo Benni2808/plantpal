@@ -5,11 +5,11 @@
         <% if !current_user %>
             <li class="navigation__nav__ul__li"> Du bist nicht eingeloggt!</li>
             <li class="navigation__nav__ul__li"> <%= link_to 'Registrieren', new_user_registration_path %> </li>
-            <li class="navigation__nav__ul__li"> <%= link_to 'Login', new_user_session_path %> </li>
+            <li class="navigation__nav__ul__li"> <%= link_to 'Anmelden', new_user_session_path %> </li>
         <% else %>
             <li class="navigation__nav__ul__li"> Du bist eingeloggt <%= current_user.id %> - <%=current_user.nickName %> </li>
             <li class="navigation__nav__ul__li"> <%= link_to 'Meine Pflanzen', plants_path %> </li>
-            <li class="navigation__nav__ul__li"> <%= button_to 'Logout', destroy_user_session_path, method: :delete %> </li>
+            <li class="navigation__nav__ul__li"> <%= button_to 'Abmelden', destroy_user_session_path, method: :delete %> </li>
         <% end %>
     <ul>
 </header>
