@@ -2,7 +2,11 @@ class PlantsController < InheritedResources::Base
   before_action :set_user
 
   def index
-    @plants = @user.plants
+    if current_user
+      @plants = @user.plants
+    else
+      redirect_to root_path
+    end
   end
   private
     def plant_params
