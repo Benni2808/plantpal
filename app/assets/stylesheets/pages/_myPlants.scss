@@ -1,0 +1,41 @@
+
+.allPlants {
+    margin: 20px 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__plant {
+        width: 32%;
+        height: auto;
+        text-decoration: none;
+        // overflow: hidden;
+        
+        &-image {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.progress--water{
+    margin: 0 auto;
+    height: 30px;
+    width: 90%;
+    background: linear-gradient(to right, aqua var(--progress-level), white var(--progress-level));
+    border: 1px solid black;
+}
+
+.progress--love {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    p {
+        &:first-child {
+            align-self: flex-start;
+
+        }
+    }
+}
