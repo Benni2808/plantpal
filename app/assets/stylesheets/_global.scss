@@ -78,7 +78,7 @@ label {
   display: block;
 }
 
-header{
+.navigation{
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
@@ -87,7 +87,7 @@ header{
   display: grid;
   grid: 1fr 1fr;
 
-  div{
+  &__logo{
     grid-column: 1/2;
     margin: 1.2rem 0.8rem;
     font-size: 2rem;
@@ -95,16 +95,16 @@ header{
     margin-left: 2rem;
   }
 
-  nav{
+  &__nav{
     grid-column: 2/3;
     justify-self: end;
     margin-right: 2rem;
     text-transform: uppercase;
 
-    ul{
+    &__ul{
       list-style: none;
       
-      li{
+      &__li{
         display: inline-block;
         margin: 1.2rem 0.8rem;
         

@@ -1,15 +1,15 @@
-<header>
-<div class="logo">PlantPal</div>
-<nav>
-    <ul>
+<header class="navigation">
+<div class="navigation__logo">PlantPal</div>
+<nav class="navigation__nav">
+    <ul class="navigation__nav__ul">
         <% if !current_user %>
-            <li> Du bist nicht eingeloggt!</li>
-            <li> <%= link_to 'Sign up', new_user_registration_path %> </li>
-            <li> <%= link_to 'Login', new_user_session_path %> </li>
+            <li class="navigation__nav__ul__li"> Du bist nicht eingeloggt!</li>
+            <li class="navigation__nav__ul__li"> <%= link_to 'Sign up', new_user_registration_path %> </li>
+            <li class="navigation__nav__ul__li"> <%= link_to 'Login', new_user_session_path %> </li>
         <% else %>
-            <li> Du bist eingeloggt <%= current_user.id %> - <%=current_user.nickName %> </li>
-            <li> <%= link_to 'My Plants', plants_path %> </li>
-            <li> <%= button_to 'Logout', destroy_user_session_path, method: :delete %> </li>
+            <li class="navigation__nav__ul__li"> Du bist eingeloggt <%= current_user.id %> - <%=current_user.nickName %> </li>
+            <li class="navigation__nav__ul__li"> <%= link_to 'My Plants', plants_path %> </li>
+            <li class="navigation__nav__ul__li"> <%= button_to 'Logout', destroy_user_session_path, method: :delete %> </li>
         <% end %>
     <ul>
 </header>
