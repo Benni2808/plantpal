@@ -1,0 +1,31 @@
+@import "fonts";
+@import "variables";
+  
+.home{
+    text-align: center;
+    &__h1{
+        margin: 5rem 0 1.5rem 0;
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+    &__h2{
+        margin: 1rem 0;
+        font-weight: 100;
+    }
+    &__p{
+        max-width: 1000px;
+    }
+}
+
+@media only screen and (max-width:700px){
+    .home__h1 {
+        margin: 2rem 0 1.5rem 0;
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .home__h2 {
+        font-size: 1.8rem;
+        line-height: 1.8rem;
+    }
+}

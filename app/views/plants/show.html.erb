@@ -41,14 +41,6 @@
     <%= link_to image_tag(@plant.image, style:'width:100%'), plants_path %>  
   </div> 
 </p>
-<%
-=begin%>
- <div style="width:400px; height:auto">
-<%= @plant.params %>
- <%= link_to image_tag(@plant.image, style:'width:100%'), plants_path %>  
-</div> 
-<%
-=end%>
 
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
 <%= link_to 'Back', plants_path %>

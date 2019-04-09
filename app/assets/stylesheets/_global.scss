@@ -4,13 +4,20 @@
 body {
   background-color: $color__white;
   color: $color__black;
-  font-family: Mukta, verdana, sans-serif;
+  font-family: 'Mukta', verdana, sans-serif;
   font-size: 1.2em;
   line-height: 1.3em;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
 }
 
 p, ol, ul, td {
-  font-family: Mukta, verdana, sans-serif;
+  font-family: 'Mukta', verdana, sans-serif;
   font-size: 1em;
   line-height: 1.2em;
 }
@@ -78,7 +85,7 @@ label {
   display: block;
 }
 
-header{
+.navigation{
   position: -webkit-sticky; /* Safari */
   position: sticky;
   top: 0;
@@ -87,30 +94,38 @@ header{
   display: grid;
   grid: 1fr 1fr;
 
-  div{
+  &__logo{
     grid-column: 1/2;
-    margin: 1.2rem 0.8rem;
+    margin: auto;
+    margin-left: 2rem;
     font-size: 2rem;
     font-weight: 600;
-    margin-left: 2rem;
+
+    a{
+      text-decoration: none; 
+      color:$color__white;
+    }
   }
 
-  nav{
+  &__nav{
+    width: 100%;
     grid-column: 2/3;
-    justify-self: end;
-    margin-right: 2rem;
     text-transform: uppercase;
+    text-align: right;
 
-    ul{
+    &__ul{
       list-style: none;
+      padding-right: 2rem;
       
-      li{
+      &__li{
         display: inline-block;
         margin: 1.2rem 0.8rem;
+        font-size: 1rem;
         
         a{
           text-decoration: none;
           color: $color__white;
+          transition: 200ms ease-in-out;
           
           &:visited {
             color: $color__green--dark;
@@ -124,3 +139,173 @@ header{
     }
   }
 }
+
+.button_to{
+  input[type="submit"]{
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+
+    &:hover{
+      color: $color__green--dark;
+    }
+  }
+}
+
+h1{
+  font-weight: 800;
+  font-size: 2.2rem;
+  line-height: 2.6rem;
+}
+h2{
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 2.4rem;
+}
+h3{
+  font-weight: 600;
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+
+.page-content{
+  margin: 2.5rem;
+  display: grid;
+  justify-content: center;
+}
+
+#notice, .notice, .alert{
+  display: grid;
+  justify-content: center;
+}
+
+// Forms
+.new_user{
+
+  &__container{
+    margin: 2rem 0;
+    width: 20rem;
+    height: auto;
+    
+    label{
+      color: $color__black;
+      width: 100%;
+      font-size: 1.5rem;
+      line-height: 2.75rem;
+      font-weight: 400;
+    }
+    input{
+      width: 100%;
+      border: 0;
+      outline: 0;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid $color__black;
+      box-shadow: none;
+      color: #111;
+      font-size: 1rem;
+      font-weight: 300;
+
+      &:invalid {
+        outline: 0;
+        color: $color__pink--dark;
+        border-color: $color__pink--dark;
+      }
+      &:focus,
+      &:valid {
+        border-color: $color__green--light;
+      }
+    }
+  }
+
+  &__mail{
+    margin-top: 1.5rem;
+  }
+
+  &__pw{
+    label{
+      display: inline-block;
+      width: fit-content;
+    }
+    &__p{
+      font-size: 1rem;
+      line-height: 1.2rem;
+      font-weight: 300;
+      display: inline-block;
+      width: fit-content;
+    }
+    input{
+      display: block;
+    }
+  }
+  &__remember-me{
+    
+    label, input{
+      display: inline-block;
+      width: fit-content;
+      color: $color__black;
+      font-size: 1.2rem;
+    }
+  }
+  &__submit-button{
+    input{
+      background-color: $color__green--light;
+      color: $color__white;
+      padding: 0.5rem 0.8rem;
+      transition: 300ms ease-in-out;
+      text-transform: uppercase;
+      border-radius: 2px;
+
+      &:hover{
+        background-color: $color__green--dark;
+      }
+    }
+  }
+}
+
+.links{
+  margin: 2rem 0;
+
+    a{
+      color: $color__black;
+      text-decoration: none;
+      transition: 50ms ease-in-out;
+      
+      &:hover{
+          color: $color__green--dark;
+      }
+    }
+}
+
+@media only screen and (max-width:700px){
+
+  .navigation{
+    grid: 1fr;
+
+    &__logo{
+      grid-column: 1/2;
+      margin: 2rem auto 1.5rem;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    &__nav{
+      grid-column: 1/2;
+      text-align: center;
+
+      &__ul{
+        padding-right: 0;
+        margin-bottom: 1rem;
+
+        &__li{
+          margin: 0.6rem 0;
+          width: 100%;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .new_user__container {
+    width: 16rem;
+  }
+ }

@@ -35,6 +35,14 @@
     <% end %>
   </tbody>
 </table>
+<h1> HALLIHALLOOOO</h1>
+<section id='myPlants'>
+  <% @plants.each do |plant| %>
+    <div class='plant-thumbnail' style="width:400px; height:auto">
+    <%= link_to image_tag(plant.image, style:'width:100%'), plant_path(plant.id) %>  
+    </div>
+  <% end %>
+</section>
 
 <br>
 
