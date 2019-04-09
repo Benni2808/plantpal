@@ -37,7 +37,7 @@ gem 'activeadmin'
 
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
-gem 'carrierwave', '~> 1.0'
+# gem 'carrierwave', '~> 1.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -68,9 +68,12 @@ group :development do
   # gem 'bullet'
   # annotate - inserts the db schema as comments in your model.rb file
   gem 'annotate'
-  # opne emails in browser
+  # open emails in browser
   gem 'dokku-cli'
   gem 'letter_opener'
+  gem 'solargraph'
+  # use dokku
+  gem 'dokku-cli'
 end
 
 group :production do

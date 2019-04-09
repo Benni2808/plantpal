@@ -35,9 +35,12 @@
   <%= @plant.love %>
 </p>
 
-<div style="width:400px; height:auto">
-<%= link_to image_tag(@plant.image, style:'width:100%'), plants_path %>
-</div>
+<p>
+  <strong>Image:</strong>
+  <div style="width:400px; height:auto">
+    <%= link_to image_tag(@plant.image, style:'width:100%'), plants_path %>  
+  </div> 
+</p>
 
 <%= link_to 'Edit', edit_plant_path(@plant) %> |
 <%= link_to 'Back', plants_path %>
