@@ -43,6 +43,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "webpack-dev-server": "^3.2.1"
   }
 }
