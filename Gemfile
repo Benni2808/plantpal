@@ -71,16 +71,9 @@ group :development do
   # open emails in browser
   gem 'dokku-cli'
   gem 'letter_opener'
-<<<<<<< HEAD
   gem 'solargraph'
-=======
   # use dokku
   gem 'dokku-cli'
-end
-
-group :production do
-  gem 'rails_12factor'
->>>>>>> 290ff89adde3fe9054dcc33fbbdaa33352412abd
 end
 
 group :production do
