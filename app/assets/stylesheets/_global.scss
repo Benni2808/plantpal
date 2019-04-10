@@ -196,7 +196,7 @@ h3{
       color: $color__black;
       width: 100%;
       font-size: 1.5rem;
-      line-height: 2.75rem;
+      line-height: 1.7rem;
       font-weight: 400;
     }
     input{
@@ -264,6 +264,12 @@ h3{
         background-color: $color__green--dark;
       }
     }
+  }
+}
+
+.edit-plant, .new-plant{
+  .new_user__container {
+      width: 35rem;
   }
 }
 

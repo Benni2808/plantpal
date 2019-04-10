@@ -21,18 +21,21 @@
     <%= form.text_field :nickName, placeholder: "Bubba"  %>
   </div>
 
-  <div class="new_user__container new_plant__water-need">
-    <%= form.label :waterNeed, 'Wie viel Wasser braucht sie pro Woche? (in ml)'%>
+  <div class="new_user__container new_plant__water-need new_user__pw">
+    <%= form.label :waterNeed, 'Wasser pro Woche'%>
+    <p class="new_user__pw__p">(in ml)</p>
     <%= form.number_field :waterNeed, placeholder: "150"  %>
   </div>
 
-  <div class="new_user__container new_plant__water-current">
-    <%= form.label :waterCurrent, 'Wie viel Wasser hat sie noch, bis du sie das nächste Mal gießen musst?'%>
+  <div class="new_user__container new_plant__water-current new_user__pw">
+    <%= form.label :waterCurrent, 'Aktueller Wasserstand'%>
+    <p class="new_user__pw__p">(in ml)</p>
     <%= form.number_field :waterCurrent, placeholder: "100"  %>
   </div>
 
-  <div class="new_user__container new_plant__sun-need">
-    <%= form.label :sunNeed, 'Wie viele Stunden direktes Sonnenlicht pro Tag braucht deine Pflanze?' %>
+  <div class="new_user__container new_plant__sun-need new_user__pw">
+    <%= form.label :sunNeed, 'Direktes Sonnenlicht pro Tag' %>
+    <p class="new_user__pw__p">(in Stunden)</p>
     <%= form.text_field :sunNeed, placeholder: "6" %>
   </div>
 
