@@ -1,6 +1,10 @@
-<h1>Editing Plant</h1>
+<section class="page-content">
+<h1>Pal bearbeiten</h1>
 
 <%= render 'form', plant: @plant %>
 
-<%= link_to 'Show', @plant %> |
-<%= link_to 'Back', plants_path %>
+<p class="links">
+    <%= link_to 'zurück', plants_path %> |
+    <%= link_to 'Pal anzeigen', @plant %>
+</p>
+</section>

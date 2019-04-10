@@ -1,0 +1,69 @@
+@import "fonts";
+@import "variables";
+
+.my-plants{
+    
+    &__allPlants {
+        margin: 20px 2%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+    
+        &__plant {
+            min-width:20rem;
+            max-width: 23rem;
+            height: auto;
+            text-decoration: none;
+            margin: 0 1rem;
+            
+            &-image {
+                width: 100%;
+                object-fit: cover;
+            }
+
+            &__nickname{
+                font-size: 1.6rem;
+                line-height: 2rem;
+                text-align: center;
+                margin: 0.7rem 0 0.1rem;
+            }
+
+            &__love{
+                margin: 1rem 0;
+            }
+
+            &__water{
+                margin: 0.5rem 0 1rem 0;
+                
+            }
+
+            &--desc{
+                margin: 0.3rem 0;
+                font-size: 1rem;
+                line-height: 1.2rem;
+                text-align: center;
+
+                &:first-of-type{
+                    font-size: 1.2rem;
+                    line-height: 1.4rem;
+                    margin: 0;
+                }
+
+                &:last-child{
+                    margin: 0.3rem 0 5rem 0;
+                }
+            }
+        }
+    }
+}
+
+// Media Queries
+@media only screen and (max-width:979px){
+    .my-plants{
+    
+        &__allPlants {
+            justify-content: center;
+        }
+    }
+}

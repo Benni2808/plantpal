@@ -20,31 +20,54 @@
 #         nickName: 'suppiduppipflanzenboyy'
 #     },
 #     {
-#         email: 'benjamin.joham@gmail.com',
+#         email: 'daniela.kubesch@gmail.com',
 #         password: 'test1234',
-#         nickName: 'benni'
+#         nickName: 'Daniela'
 #     }
 # ])
 
 Plant.create([
     {
-        realName: 'sljfslfj',
-        nickName: 'plant1',
+        realName: 'Rose',
+        nickName: 'Lisa',
         waterNeed: 1400,
         waterCurrent: 600,
         sunNeed: 2.5,
-        place: 'bedroom',
+        place: 'Küche',
         love: 6,
-        user_id: 2
+        user_id: 4
     },
     {
-        realName: 'sfsf',
-        nickName: 'plant2',
+        realName: 'Kaktus',
+        nickName: 'Max',
         waterNeed: 1200,
         waterCurrent: 600,
         sunNeed: 2.5,
-        place: 'living room',
+        place: 'Schlafzimmer',
         love: 3,
-        user_id: 1
+        user_id: 4
     }
 ])
+
+# Plant.create([
+#     {
+#         realName: 'sljfslfj',
+#         nickName: 'plant1',
+#         waterNeed: 1400,
+#         waterCurrent: 600,
+#         sunNeed: 2.5,
+#         place: 'bedroom',
+#         love: 6,
+#         user_id: 2
+#     },
+#     {
+#         realName: 'sfsf',
+#         nickName: 'plant2',
+#         waterNeed: 1200,
+#         waterCurrent: 600,
+#         sunNeed: 2.5,
+#         place: 'living room',
+#         love: 3,
+#         user_id: 1
+#     }
+# ])
