@@ -1,7 +1,7 @@
 <%= form_with(model: plant, local: true) do |form| %>
   <% if plant.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(plant.errors.count, "error") %> prohibited this plant from being saved:</h2>
+      <p><%= pluralize(plant.errors.count, "error") %> hat das Speichern der Pflanze verhindert:</p>
 
       <ul>
       <% plant.errors.full_messages.each do |message| %>
@@ -11,47 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="new_user__container new_plant__real-name">
     <%= form.label :realName %>
     <%= form.text_field :realName %>
   </div>
 
-  <div class="field">
+  <div class="new_user__container new_plant__nick-name">
     <%= form.label :nickName %>
     <%= form.text_field :nickName %>
   </div>
 
-  <div class="field">
+  <div class="new_user__container new_plant__water-need">
     <%= form.label :waterNeed %>
     <%= form.number_field :waterNeed %>
   </div>
 
-  <div class="field">
+  <div class="new_user__container new_plant__water-current">
     <%= form.label :waterCurrent %>
     <%= form.number_field :waterCurrent %>
   </div>
 
-  <div class="field">
+  <div class="new_user__container new_plant__sun-need">
     <%= form.label :sunNeed %>
     <%= form.text_field :sunNeed %>
   </div>
 
-  <div class="field">
+  <div class="new_user__container new_plant__sun-place">
     <%= form.label :place %>
     <%= form.text_field :place %>
   </div>
 
-  <div class="field">
+  <div class="new_user__container new_plant__place">
     <%= form.label :love %>
     <%= form.number_field :love %>
   </div>
 
-  <div class="field">
+  <div class="new_user__container new_plant__love">
     <%= form.label :image %>
     <%= form.file_field :image %>
   </div>
 
-  <div class="actions">
+  <div class="new_user__submit-button">
     <%= form.submit %>
   </div>
 <% end %>

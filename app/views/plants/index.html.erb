@@ -1,6 +1,7 @@
+<section class="page-content my-plants">
 <p id="notice"><%= notice %></p>
 
-<h1>Plants</h1>
+<h1 class="my-plants__h1">Meine Pals</h1>
 
 <table>
   <thead>
@@ -35,15 +36,53 @@
     <% end %>
   </tbody>
 </table>
+<%
+=begin%>
+  .variant(resize: '400x400')
+<%
+=end%>
 <h1> HALLIHALLOOOO</h1>
-<section id='myPlants'>
+<section id='myPlants' class='allPlants'>
   <% @plants.each do |plant| %>
-    <div class='plant-thumbnail' style="width:400px; height:auto">
-    <%= link_to image_tag(plant.image, style:'width:100%'), plant_path(plant.id) %>  
+  <% @waterLevel = ((100.0 / plant.waterNeed) * plant.waterCurrent).round %>
+    <% if plant.image.attached? %>
+      <% @image = polymorphic_url plant.image%>
+    <% else %>
+      <% @image = '/assets/default.jpg' %>
+    <% end %>
+    <%
+=begin%>
+ <a href="<%=plant_path(plant.id)%>" class="allPlants__plant">
+    </a> 
+<%
+=end%>
+    <div class="allPlants__plant">
+      <%= link_to plant_path(plant.id), {:class => 'allPlants__plant-a'} do %>
+      <%= image_tag(@image, :size => "400x400", :alt => plant.nickName, :class=>'allPlants__plant-image') %>
+      <% end %>
+      <p class=""><%= plant.nickName %></p>
+      <div class="progress--water" style="--progress-level:<%= @waterLevel %>%"></div>
+      <div class="progress--love">
+      <% plant.love.times do |i| %>
+        <p>❤️</p>
+      <% end %>
+      </div>
     </div>
+    <%
+=begin%>
+ <div class="allPlants__plant-image" style="background-image:url(<%=@image%>)"></div> 
+<%
+=end%>
+    <%
+=begin%>
+ <div class="allPlants__plant">
+      <a href="<%=plant_path(plant.id)%>" class="allPlants__plant" style="display: block; background-image:url(<%=@image%>)">&nbsp;</a>
+    </div> 
+<%
+=end%>
   <% end %>
 </section>
 
-<br>
 
-<%= link_to 'New Plant', new_plant_path %>
+<%= link_to 'Pflanze hinzufügen', new_plant_path %>
+</section>

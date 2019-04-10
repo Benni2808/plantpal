@@ -7,6 +7,13 @@ body {
   font-family: 'Mukta', verdana, sans-serif;
   font-size: 1.2em;
   line-height: 1.3em;
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
 }
 
 p, ol, ul, td {
@@ -89,10 +96,11 @@ label {
 
   &__logo{
     grid-column: 1/2;
-    margin: 1.2rem 0.8rem;
+    margin: auto;
+    margin-left: 2rem;
     font-size: 2rem;
     font-weight: 600;
-    margin-left: 2rem;
+
     a{
       text-decoration: none; 
       color:$color__white;
@@ -100,21 +108,24 @@ label {
   }
 
   &__nav{
+    width: 100%;
     grid-column: 2/3;
-    justify-self: end;
-    margin-right: 2rem;
     text-transform: uppercase;
+    text-align: right;
 
     &__ul{
       list-style: none;
+      padding-right: 2rem;
       
       &__li{
         display: inline-block;
         margin: 1.2rem 0.8rem;
+        font-size: 1rem;
         
         a{
           text-decoration: none;
           color: $color__white;
+          transition: 200ms ease-in-out;
           
           &:visited {
             color: $color__green--dark;
@@ -132,6 +143,12 @@ label {
 .button_to{
   input[type="submit"]{
     text-transform: uppercase;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+
+    &:hover{
+      color: $color__green--dark;
+    }
   }
 }
 
@@ -153,6 +170,13 @@ h3{
 
 .page-content{
   margin: 2.5rem;
+  display: grid;
+  justify-content: center;
+}
+
+#notice, .notice, .alert{
+  display: grid;
+  justify-content: center;
 }
 
 // Forms
@@ -251,3 +275,37 @@ h3{
       }
     }
 }
+
+@media only screen and (max-width:700px){
+
+  .navigation{
+    grid: 1fr;
+
+    &__logo{
+      grid-column: 1/2;
+      margin: 2rem auto 1.5rem;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    &__nav{
+      grid-column: 1/2;
+      text-align: center;
+
+      &__ul{
+        padding-right: 0;
+        margin-bottom: 1rem;
+
+        &__li{
+          margin: 0.6rem 0;
+          width: 100%;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  .new_user__container {
+    width: 16rem;
+  }
+ }
