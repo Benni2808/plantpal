@@ -6,12 +6,12 @@
 
  <div class="new_user__container new_user__name">
     <%= f.label :nickName, 'Name' %>
-    <%= f.text_field :nickName %>
+    <%= f.text_field :nickName, placeholder: "Dani Sahne"  %>
   </div> 
 
   <div class="new_user__container new_user__mail">
-    <%= f.label :email, 'E-Mail' %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, 'E-Mail', style:"text-transform: capitalize;" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "dani@sahne.com"  %>
   </div>
 
   <div class="new_user__container new_user__pw">

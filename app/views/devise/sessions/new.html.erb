@@ -3,8 +3,8 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="new_user__container new_user__mail">
-    <%= f.label :email, 'E-Mail' %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, 'E-Mail', style:"text-transform: capitalize;" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "dani@sahne.com"  %>
   </div>
 
   <div class="new_user__container new_user__pw">
@@ -15,7 +15,7 @@
   <% if devise_mapping.rememberable? %>
     <div class="new_user__container new_user__remember-me">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me, 'Ich möchte angemeldet bleiben', style:"text-transform: inherit;" %>
+      <%= f.label :remember_me, 'Ich möchte angemeldet bleiben' %>
     </div>
   <% end %>
 
