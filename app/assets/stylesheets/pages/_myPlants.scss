@@ -23,10 +23,11 @@
 
 .progress--water{
     margin: 0 auto;
-    height: 30px;
-    width: 90%;
-    background: linear-gradient(to right, aqua var(--progress-level), white var(--progress-level));
-    border: 1px solid black;
+    height: 2rem;
+    width: 100%;
+    background: linear-gradient(to right, $color__blue--dark var(--progress-level), $color__blue--light var(--progress-level));
+    box-shadow: 0px 7px 0.9rem rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
 }
 
 .progress--love {
