@@ -9,6 +9,21 @@ class PlantsController < InheritedResources::Base
     end
   end
 
+  def new 
+    @plant = Plant.new()
+    # plant = new Plant(:realName,:nickName,:waterNeed,:waterCurrent, :sunNeed,:place,:love, :user_id=>@user.id)
+    # plant.!save
+  end
+
+  def create
+    @plant = Plant.new(plant_params.merge(user_id: @user.id))
+        if (@plant.save)
+            redirect_to plant_path(@plant), notice: 'Plant was successfully created!'
+        else
+            render :new
+        end
+  end
+
   def show
     if !current_user
       redirect_to root_path, notice: 'Please login to see your beautiful plants 🌷🌸🌺🌻'
