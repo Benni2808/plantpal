@@ -132,7 +132,7 @@ label {
           color: $color__white;
           transition: 200ms ease-in-out;
           
-          &:visited {
+          &:active {
             color: $color__green--dark;
           }
           
@@ -198,6 +198,7 @@ h3{
       font-size: 1.5rem;
       line-height: 2.75rem;
       font-weight: 400;
+      text-transform: capitalize;
     }
     input{
       width: 100%;
@@ -226,7 +227,7 @@ h3{
     margin-top: 1.5rem;
   }
 
-  &__pw{
+  &__pw, &__pw-confirmation{
     label{
       display: inline-block;
       width: fit-content;
@@ -301,7 +302,7 @@ h3{
 }
 .links--dif{
   display: grid;
-  grid: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 
   a{
     grid-column: 1/2;

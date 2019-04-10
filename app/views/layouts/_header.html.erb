@@ -3,7 +3,7 @@
 <nav class="navigation__nav">
     <ul class="navigation__nav__ul">
         <% if !current_user %>
-            <li class="navigation__nav__ul__li navigation__nav__ul__li--user"> Du bist nicht eingeloggt!</li>
+            <%# <li class="navigation__nav__ul__li navigation__nav__ul__li--user"> Du bist nicht eingeloggt</li> %>
             <li class="navigation__nav__ul__li"> <%= link_to 'Registrieren', new_user_registration_path %> </li>
             <li class="navigation__nav__ul__li"> <%= link_to 'Anmelden', new_user_session_path %> </li>
         <% else %>
