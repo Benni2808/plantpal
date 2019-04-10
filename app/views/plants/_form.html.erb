@@ -12,42 +12,42 @@
   <% end %>
 
   <div class="new_user__container new_plant__real-name">
-    <%= form.label :realName %>
-    <%= form.text_field :realName %>
+    <%= form.label :realName, 'Botanische Bezeichnung:'%>
+    <%= form.text_field :realName, placeholder: "Monstera deliciosa"  %>
   </div>
 
   <div class="new_user__container new_plant__nick-name">
-    <%= form.label :nickName %>
-    <%= form.text_field :nickName %>
+    <%= form.label :nickName, 'Nickname deiner Pflanze:'%>
+    <%= form.text_field :nickName, placeholder: "Bubba"  %>
   </div>
 
   <div class="new_user__container new_plant__water-need">
-    <%= form.label :waterNeed %>
-    <%= form.number_field :waterNeed %>
+    <%= form.label :waterNeed, 'Wie viel Wasser braucht sie pro Woche? (in ml)'%>
+    <%= form.number_field :waterNeed, placeholder: "150"  %>
   </div>
 
   <div class="new_user__container new_plant__water-current">
-    <%= form.label :waterCurrent %>
-    <%= form.number_field :waterCurrent %>
+    <%= form.label :waterCurrent, 'Wie viel Wasser hat sie noch, bis du sie das nächste Mal gießen musst?'%>
+    <%= form.number_field :waterCurrent, placeholder: "100"  %>
   </div>
 
   <div class="new_user__container new_plant__sun-need">
-    <%= form.label :sunNeed %>
-    <%= form.text_field :sunNeed %>
+    <%= form.label :sunNeed, 'Wie viele Stunden direktes Sonnenlicht pro Tag braucht deine Pflanze?' %>
+    <%= form.text_field :sunNeed, placeholder: "6" %>
   </div>
 
   <div class="new_user__container new_plant__sun-place">
-    <%= form.label :place %>
-    <%= form.text_field :place %>
+    <%= form.label :place, 'Wo steht deine Pflanze gerade?'%>
+    <%= form.text_field :place, placeholder: "Schlafzimmer"  %>
   </div>
 
   <div class="new_user__container new_plant__place">
-    <%= form.label :love %>
-    <%= form.number_field :love %>
+    <%= form.label :love, 'Wie geht es deiner Pflanze auf einer Skala von 1-10?'%>
+    <%= form.number_field :love, placeholder: "7"%>
   </div>
 
   <div class="new_user__container new_plant__love">
-    <%= form.label :image %>
+    <%= form.label :image, 'Hier kannst du ein Bild deiner Pflanze hochladen!'%>
     <%= form.file_field :image %>
   </div>
 
