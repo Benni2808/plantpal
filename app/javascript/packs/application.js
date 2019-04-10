@@ -8,6 +8,7 @@
 // require("channels");
 // require("main");
 //= require_tree .
+//= require jquery-placeholder
 
 // console.log('test');
 window.addEventListener('load', ()=>{
