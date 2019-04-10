@@ -1,88 +1,42 @@
 <section class="page-content my-plants">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<h1 class="my-plants__h1">Meine Pals</h1>
+  <h1 class="my-plants__h1">Meine Pals</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Realname</th>
-      <th>Nickname</th>
-      <th>Waterneed</th>
-      <th>Watercurrent</th>
-      <th>Sunneed</th>
-      <th>Place</th>
-      <th>Love</th>
-      <th>User.id</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <section id='myPlants' class='my-plants__allPlants'>
 
-  <tbody>
     <% @plants.each do |plant| %>
-      <tr>
-        <td><%= plant.realName %></td>
-        <td><%= plant.nickName %></td>
-        <td><%= plant.waterNeed %></td>
-        <td><%= plant.waterCurrent %></td>
-        <td><%= plant.sunNeed %></td>
-        <td><%= plant.place %></td>
-        <td><%= plant.love %></td>
-        <td><%= plant.user_id %></td>
-        <td><%= link_to 'Show', plant %></td>
-        <td><%= link_to 'Edit', edit_plant_path(plant) %></td>
-        <td><%= link_to 'Destroy', plant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%
-=begin%>
-  .variant(resize: '400x400')
-<%
-=end%>
-<h1> HALLIHALLOOOO</h1>
-<section id='myPlants' class='allPlants'>
-  <% @plants.each do |plant| %>
-  <% @waterLevel = ((100.0 / plant.waterNeed) * plant.waterCurrent).round %>
-    <% if plant.image.attached? %>
-      <% @image = polymorphic_url plant.image%>
-    <% else %>
-      <% @image = '/assets/default.jpg' %>
-    <% end %>
-    <%
-=begin%>
- <a href="<%=plant_path(plant.id)%>" class="allPlants__plant">
-    </a> 
-<%
-=end%>
-    <div class="allPlants__plant">
-      <%= link_to plant_path(plant.id), {:class => 'allPlants__plant-a'} do %>
-      <%= image_tag(@image, :size => "400x400", :alt => plant.nickName, :class=>'allPlants__plant-image') %>
+    <% @waterLevel = ((100.0 / plant.waterNeed) * plant.waterCurrent).round %>
+      <% if plant.image.attached? %>
+        <% @image = polymorphic_url plant.image%>
+      <% else %>
+        <% @image = '/assets/default.jpg' %>
       <% end %>
-      <p class=""><%= plant.nickName %></p>
-      <div class="progress--water" style="--progress-level:<%= @waterLevel %>%"></div>
-      <div class="progress--love">
-      <% plant.love.times do |i| %>
-        <p>♥️</p>
-      <% end %>
+      
+      <div class="my-plants__allPlants__plant">
+        <%= link_to plant_path(plant.id), {:class => 'my-plants__allPlants__plant-a'} do %>
+          <%= image_tag(@image, :size => "400x400", :alt => plant.nickName, :class=>'my-plants__allPlants__plant-image') %>
+        <% end %>
+
+        <h2 class="my-plants__allPlants__plant__nickname"><%= plant.nickName %></h2>
+        <p class="my-plants__allPlants__plant--desc"><%= plant.realName %></p> 
+
+        <div class="progress--love my-plants__allPlants__plant__love">
+          <% plant.love.times do |i| %>
+            <p>♥️</p>
+          <% end %>
+        </div>
+
+        <div class="progress--water my-plants__allPlants__plant__water" style="--progress-level:<%= @waterLevel %>%"></div>
+        <p class="my-plants__allPlants__plant--desc"><%= plant.waterCurrent %> / <%= plant.waterNeed %> ml</p>
+
+        <p class="my-plants__allPlants__plant--desc">braucht <%= plant.sunNeed %>h Sonne</p>
+        <p class="my-plants__allPlants__plant--desc"><%= plant.place %></p>
       </div>
-    </div>
-    <%
-=begin%>
- <div class="allPlants__plant-image" style="background-image:url(<%=@image%>)"></div> 
-<%
-=end%>
-    <%
-=begin%>
- <div class="allPlants__plant">
-      <a href="<%=plant_path(plant.id)%>" class="allPlants__plant" style="display: block; background-image:url(<%=@image%>)">&nbsp;</a>
-    </div> 
-<%
-=end%>
-  <% end %>
-</section>
+    <% end %>
+  </section>
 
-
-<%= link_to 'Pflanze hinzufügen', new_plant_path %>
+  <div class="links link-button"> 
+    <%= link_to 'Pflanze hinzufügen', new_plant_path %>
+  </div>
 </section>
