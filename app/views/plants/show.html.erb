@@ -47,8 +47,8 @@
     <li class="show-plant__ul__li">Aktuell chille ich im <%= @plant.place %></li>
   </ul>
 
-  <div class="links"> 
-    <%= link_to 'zurück', plants_path %> |
-    <%= link_to 'Pal bearbeiten', edit_plant_path(@plant) %>
+  <div class="links--dif"> 
+    <%= link_to 'zurück', plants_path %>
+   <span class="link-button"> <%= link_to 'Pal bearbeiten', edit_plant_path(@plant) %></span>
   </div>
 </section>

@@ -177,6 +177,8 @@ h3{
 #notice, .notice, .alert{
   display: grid;
   justify-content: center;
+  margin: 2rem 0 0;
+
 }
 
 // Forms
@@ -262,7 +264,7 @@ h3{
   }
 }
 
-.links{
+.links, .links--dif{
   margin: 2rem 0;
 
     a{
@@ -274,23 +276,40 @@ h3{
           color: $color__green--dark;
       }
     }
-}
-.link-button{
-  a{
-    background-color: $color__green--light;
-    color: $color__white;
-    padding: 0.5rem 0.8rem;
-    transition: 300ms ease-in-out;
-    text-transform: uppercase;
-    border-radius: 2px;
 
-    &:hover{
-      background-color: $color__green--dark;
-      color: $color__white;
+    .link-button{
+        display: flex;
+        justify-content: flex-end;
+        
+      a{
+        background-color: $color__green--light;
+        color: $color__white;
+        padding: 0.5rem 0.8rem;
+        transition: 300ms ease-in-out;
+        text-transform: uppercase;
+        border-radius: 2px;
+    
+        &:hover{
+          background-color: $color__green--dark;
+          color: $color__white;
+        }
+      }
     }
+}
+.links--dif{
+  display: grid;
+  grid: 1fr 1fr;
+
+  a{
+    grid-column: 1/2;
+    display: flex;
+    align-items: center;
+  }
+
+  .link-button{
+      grid-column: 2/3;
   }
 }
-
 // Water and Love bar
 .progress--water{
   margin: 0 auto;
