@@ -32,6 +32,11 @@ class PlantsController < InheritedResources::Base
         redirect_to plants_path, notice: 'This beautiful plant belongs to someone else 😜'
       else
         @plant = Plant.find(params[:id])
+          if @plant.image.attached?
+            @plant_image = polymorphic_url @plant.image
+          else
+            @plant_image = '/assets/default.jpg'
+          end
       end
     end
   end

@@ -8,6 +8,11 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    if @user.photo.attached?
+      @user_photo = polymorphic_url @user.photo
+    else
+      @user_photo = '/assets/default_user.jpg'
+    end
     @plants = @user.plants
   end
 
