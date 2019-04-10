@@ -7,7 +7,7 @@
             <li class="navigation__nav__ul__li"> <%= link_to 'Registrieren', new_user_registration_path %> </li>
             <li class="navigation__nav__ul__li"> <%= link_to 'Anmelden', new_user_session_path %> </li>
         <% else %>
-            <li class="navigation__nav__ul__li"> Du bist eingeloggt <%= current_user.id %> - <%=current_user.nickName %> </li>
+            <li class="navigation__nav__ul__li"> Hallo <%=current_user.nickName %>, du bist eingeloggt! </li>
             <li class="navigation__nav__ul__li"> <%= link_to 'Meine Pflanzen', plants_path %> </li>
             <li class="navigation__nav__ul__li"> <%= button_to 'Abmelden', destroy_user_session_path, method: :delete %> </li>
         <% end %>
