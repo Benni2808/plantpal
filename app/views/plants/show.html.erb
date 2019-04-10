@@ -35,7 +35,7 @@
   </div>
   
   <div class="show-plant__pic">
-    <%= link_to image_tag(@plant.image, style:'width:100%'), plants_path %>  
+    <%= link_to image_tag(@plant_image, style:'width:100%'), plants_path %>  
   </div> 
 
   <h2 class="show-plant__h2">Pflegehinweise:</h2>
@@ -48,7 +48,7 @@
   </ul>
 
   <div class="links--dif"> 
-    <%= link_to 'zurück', plants_path %>
+    <%= link_to 'zurück', dashboard_path %>
    <span class="link-button"> <%= link_to 'Pal bearbeiten', edit_plant_path(@plant) %></span>
   </div>
 </section>

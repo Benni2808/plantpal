@@ -1,17 +1,17 @@
 <section class="page-content my-plants">
   <p id="notice"><%= notice %></p>
-<% 
-  @user = current_user
-  if @user.photo.attached?
-    @user_photo = polymorphic_url @user.photo
-  else
-    @user_photo = '/assets/default_user.jpg'
-  end
-%>
-<h2> Username: <%= @user.nickName %>
-<%= image_tag(@user_photo, :size => "200x200", :alt => @user.nickName, :id=>'user_photo', :class=>'user-image', :style=>'border-radius:50%;') %>
-
+  
   <h1 class="my-plants__h1">Meine Pals</h1>
+
+  <div class="my-plants__user">
+    <div class="my-plants__user__details">
+      <h2 class="my-plants__user__details__nickname"> <%= @user.nickName %></h2>
+      <p class="my-plants__user__details__plantcount"> <%= @user.plants.count %> Pflanzen</p>
+    </div>
+    <%= link_to edit_user_registration_path, {:class => 'user__image-a'} do %>
+      <%= image_tag(@user_photo, :size => "150x150", :alt => @user.nickName, :class=>'user-image', :style=>'border-radius:50%;') %>
+    <% end %>
+  </div>
 
   <section id='myPlants' class='my-plants__allPlants'>
 
