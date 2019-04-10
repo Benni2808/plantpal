@@ -11,10 +11,11 @@
         justify-content: space-between;
     
         &__plant {
-            width: 32%;
+            min-width:20rem;
+            max-width: 23rem;
             height: auto;
             text-decoration: none;
-            // overflow: hidden;
+            margin: 0 1rem;
             
             &-image {
                 width: 100%;
@@ -53,6 +54,16 @@
                     margin: 0.3rem 0 5rem 0;
                 }
             }
+        }
+    }
+}
+
+// Media Queries
+@media only screen and (max-width:979px){
+    .my-plants{
+    
+        &__allPlants {
+            justify-content: center;
         }
     }
 }
