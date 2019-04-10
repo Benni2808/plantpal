@@ -12,42 +12,42 @@
   <% end %>
 
   <div class="new_user__container new_plant__real-name">
-    <%= form.label :realName %>
+    <%= form.label :realName, 'Botanische Bezeichnung deiner Pflanze:' %>
     <%= form.text_field :realName %>
   </div>
 
   <div class="new_user__container new_plant__nick-name">
-    <%= form.label :nickName %>
+    <%= form.label :nickName, 'Welchen Nickname hat deine Pflanze:' %>
     <%= form.text_field :nickName %>
   </div>
 
   <div class="new_user__container new_plant__water-need">
-    <%= form.label :waterNeed %>
+    <%= form.label :waterNeed, 'Wie viel Wasser braucht deine Pflanze pro Woche? (in ml)' %>
     <%= form.number_field :waterNeed %>
   </div>
 
   <div class="new_user__container new_plant__water-current">
-    <%= form.label :waterCurrent %>
+    <%= form.label :waterCurrent, 'Wie viel Wasser hat sie noch, bis du sie das nächste Mal gießen musst?' %>
     <%= form.number_field :waterCurrent %>
   </div>
 
   <div class="new_user__container new_plant__sun-need">
-    <%= form.label :sunNeed %>
+    <%= form.label :sunNeed, 'Wie viele Stunden direktes Sonnenlicht pro Tag braucht deine Pflanze?' %>
     <%= form.text_field :sunNeed %>
   </div>
 
   <div class="new_user__container new_plant__sun-place">
-    <%= form.label :place %>
+    <%= form.label :place, 'Wo steht deine Pflanze gerade?' %>
     <%= form.text_field :place %>
   </div>
 
   <div class="new_user__container new_plant__place">
-    <%= form.label :love %>
+    <%= form.label :love, 'Wie geht es deiner Pflanze auf einer Skala von 1-10?' %>
     <%= form.number_field :love %>
   </div>
 
   <div class="new_user__container new_plant__love">
-    <%= form.label :image %>
+    <%= form.label :image, 'Hier kannst du ein Bild deiner Pflanze hochladen!'%>
     <%= form.file_field :image %>
   </div>
 
