@@ -1,26 +1,26 @@
 <section class="page-content">
-<h1>Log in</h1>
+<h1>Melde dich bei deinem Konto an</h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="new_user__container new_user__mail">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, 'E-Mail', style:"text-transform: capitalize;" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "dani@sahne.com"  %>
   </div>
 
   <div class="new_user__container new_user__pw">
-    <%= f.label :password %><br />
+    <%= f.label :password, 'Passwort' %><br />
     <%= f.password_field :password, autocomplete: "current-password" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="new_user__container new_user__remember-me">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :remember_me, 'Ich möchte angemeldet bleiben' %>
     </div>
   <% end %>
 
   <div class="new_user__submit-button">
-    <%= f.submit "Login" %>
+    <%= f.submit "Anmelden" %>
   </div>
 <% end %>
 

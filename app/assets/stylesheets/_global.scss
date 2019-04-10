@@ -132,7 +132,7 @@ label {
           color: $color__white;
           transition: 200ms ease-in-out;
           
-          &:visited {
+          &:active {
             color: $color__green--dark;
           }
           
@@ -196,7 +196,7 @@ h3{
       color: $color__black;
       width: 100%;
       font-size: 1.5rem;
-      line-height: 2.75rem;
+      line-height: 1.7rem;
       font-weight: 400;
     }
     input{
@@ -226,7 +226,7 @@ h3{
     margin-top: 1.5rem;
   }
 
-  &__pw{
+  &__pw, &__pw-confirmation{
     label{
       display: inline-block;
       width: fit-content;
@@ -267,6 +267,12 @@ h3{
   }
 }
 
+.edit-plant, .new-plant{
+  .new_user__container {
+      width: 35rem;
+  }
+}
+
 .links, .links--dif{
   margin: 2rem 0;
 
@@ -301,7 +307,7 @@ h3{
 }
 .links--dif{
   display: grid;
-  grid: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 
   a{
     grid-column: 1/2;

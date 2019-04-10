@@ -3,8 +3,39 @@
 
 .my-plants{
     
+    &__user{
+        display: grid;
+        grid-template-columns: 1fr auto;
+        margin: 0 0 1.5rem 0;
+
+        &__details{
+            grid-column: 1/2;
+            justify-self: flex-end;
+            align-self: center;
+            text-align: right;
+            margin: 0 1rem 0 0;
+
+            &__nickname{
+                font-size: 1.7rem;
+                line-height: 2rem;
+            }
+            &__plantcount{
+                font-size: 1rem;
+            }
+        }
+        img{
+            grid-column: 2/3;
+            display: flex;
+            justify-self: end;
+        }
+    }
+
+    &__h1{
+        margin: 2rem 0;
+    }
+
     &__allPlants {
-        margin: 20px 2%;
+        // margin: 20px 2%;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -56,6 +87,11 @@
             }
         }
     }
+}
+
+.links--dif.dashboard-links {
+    display: flex;
+    justify-self: center;
 }
 
 // Media Queries
