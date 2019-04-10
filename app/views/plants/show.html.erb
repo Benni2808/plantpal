@@ -15,6 +15,24 @@
       <p>♥️</p>
     <% end %>
   </div>
+
+  <div class="show-plant__lovestatus"> 
+    <% if @plant.love < 2  %>
+      <p>HILFE!</p>
+    <% elsif @plant.love < 3  %>
+      <p>Ich fühle mich schlecht.</p>
+    <% elsif @plant.love < 5  %>
+      <p>Es könnte mir besser gehen...</p>
+    <% elsif @plant.love = 5  %>
+      <p>Mir geht es ganz gut.</p>
+    <% elsif @plant.love < 8  %>
+      <p>Ich bin zufrieden.</p>
+    <% elsif @plant.love < 10  %>
+      <p>Ich bin happy.</p>
+    <% elsif @plant.love = 10  %>
+      <p>Ich bin überglücklich.</p>
+    <% end %>
+  </div>
   
   <div class="show-plant__pic">
     <%= link_to image_tag(@plant.image, style:'width:100%'), plants_path %>  
