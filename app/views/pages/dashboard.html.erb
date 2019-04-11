@@ -1,7 +1,4 @@
 <section class="page-content my-plants">
-  <p id="notice"><%= notice %></p>
-  
-  <h1 class="my-plants__h1">Meine Pals</h1>
 
   <div class="my-plants__user">
     <div class="my-plants__user__details">
@@ -12,6 +9,7 @@
       <%= image_tag(@user_photo, :size => "150x150", :alt => @user.nickName, :class=>'user-image', :style=>'border-radius:50%;') %>
     <% end %>
   </div>
+  <h1 class="my-plants__h1">Meine Pals</h1>
 
   <section id='myPlants' class='my-plants__allPlants'>
 
@@ -46,7 +44,7 @@
     <% end %>
   </section>
 
-  <div class="links--dif"> 
-    <span class="link-button"><%= link_to 'Pflanze hinzufügen', new_plant_path %></span>
+  <div class="links--dif dashboard-links"> 
+    <span class="link-button dashboard-links-span"><%= link_to 'Pflanze hinzufügen', new_plant_path %></span>
   </div>
 </section>

@@ -1,21 +1,21 @@
 <section class="page-content">
-<h1>Registrieren</h1>
+<h1>Werde ein Teil von PlantPal</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
  <div class="new_user__container new_user__name">
-    <%= f.label :nickName %> <br />
-    <%= f.text_field :nickName %>
+    <%= f.label :nickName, 'Name' %>
+    <%= f.text_field :nickName, placeholder: "Dani Sahne"  %>
   </div> 
 
   <div class="new_user__container new_user__mail">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, 'E-Mail', style:"text-transform: capitalize;" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "dani@sahne.com"  %>
   </div>
 
   <div class="new_user__container new_user__pw">
-    <%= f.label :password %>
+    <%= f.label :password, 'Passwort' %>
     <% if @minimum_password_length %>
     <p class="new_user__pw__p">(mind. <%= @minimum_password_length %> Zeichen)</p>
     <% end %>
@@ -23,16 +23,17 @@
   </div>
 
   <div class="new_user__container new_user__pw-confirmation">
-    <%= f.label :password_confirmation %>
+    <%= f.label :password_confirmation, 'Passwort' %>
+    <p class="new_user__pw__p">(wiederholen)</p>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
   <div class="new_user__submit-button">
-    <%= f.submit "Anmelden" %>
+    <%= f.submit "Registrieren" %>
   </div>
 <% end %>
 
 <div class="link-to-login">
-  <p>Du hast schon einen Acount? Hier gehts zum  <%= render "devise/shared/links" %></p>
+  <p>Du hast schon einen Account? Hier gehts zum  <%= render "devise/shared/links" %></p>
 </div>
 </section>
