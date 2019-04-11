@@ -2,6 +2,7 @@
 
 module ApplicationHelper
 
+  
     def image_tag(source, options={})
         source = "default.jpg" if source.blank?
         super(source, options)

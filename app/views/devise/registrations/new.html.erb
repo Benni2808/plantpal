@@ -6,25 +6,29 @@
 
  <div class="new_user__container new_user__name">
     <%= f.label :nickName, 'Name' %>
+    <h2 class="field_with_errors__msg"><%= get_error_for_user(resource, :nickName) %> </h2>
     <%= f.text_field :nickName, placeholder: "Dani Sahne"  %>
   </div> 
 
   <div class="new_user__container new_user__mail">
     <%= f.label :email, 'E-Mail', style:"text-transform: capitalize;" %>
+    <h2 class="field_with_errors__msg"><%= get_error_for_user(resource, :email) %> </h2>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "dani@sahne.com"  %>
   </div>
 
   <div class="new_user__container new_user__pw">
     <%= f.label :password, 'Passwort' %>
     <% if @minimum_password_length %>
-    <p class="new_user__pw__p">(mind. <%= @minimum_password_length %> Zeichen)</p>
+      <p class="new_user__pw__p">(mind. <%= @minimum_password_length %> Zeichen)</p>
     <% end %>
+    <h2 class="field_with_errors__msg"><%= get_error_for_user(resource, :password) %> </h2>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
   <div class="new_user__container new_user__pw-confirmation">
     <%= f.label :password_confirmation, 'Passwort' %>
     <p class="new_user__pw__p">(wiederholen)</p>
+    <h2 class="field_with_errors__msg"><%= get_error_for_user(resource, :password_confirmation) %> </h2>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
