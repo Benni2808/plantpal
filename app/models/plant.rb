@@ -7,7 +7,7 @@ class Plant < ApplicationRecord
         }
     validates :realName, :nickName, :place, length: { 
         in: 2..20,
-        message: "Eingabe ist zu lang, max. 20 Zeichen"
+        message: "Eingabe zwischen 2 und max. 20 Zeichen"
         }, 
         format: { 
         with: /\A[a-zA-Z \t\r\n\f]+\z/,
