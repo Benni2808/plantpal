@@ -261,10 +261,27 @@ h3{
         }
       }
     }
+
+    .btn-delete{
+      margin: 0 1.5rem 0 0;
+      background-color: $color__grey--light;
+      padding: 0.5rem 0.8rem;
+      transition: 300ms ease-in-out;
+      text-transform: uppercase;
+      border-radius: 2px;
+      font-size: 1rem;
+  
+      &:hover{
+        background-color: #b3b1af;
+      }
+      input:hover{
+        color: $color__black;
+      }
+    }
 }
 .links--dif{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr auto;
 
   a{
     grid-column: 1/2;
@@ -272,8 +289,15 @@ h3{
     align-items: center;
   }
 
+  .btn-delete{
+    grid-column: 2/3;
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+  }
+
   .link-button{
-      grid-column: 2/3;
+      grid-column: 3/4;
   }
 }
 // Water and Love bar

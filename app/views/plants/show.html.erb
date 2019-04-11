@@ -49,6 +49,10 @@
 
   <div class="links--dif"> 
     <%= link_to 'zurück', dashboard_path %>
+   
+   <span class="btn-delete">
+    <%= button_to "Account löschen", plant_path(@plant.id), data: { confirm: "Bist du sicher?" }, method: :delete %>
+  </span>
    <span class="link-button"> <%= link_to 'Pal bearbeiten', edit_plant_path(@plant) %></span>
   </div>
 </section>
