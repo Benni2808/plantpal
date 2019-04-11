@@ -44,11 +44,15 @@
     <li class="show-plant__ul__li">Gieß mich mit <%= @plant.waterNeed %>ml Wasser</li>
     <li class="show-plant__ul__li">Jetzt habe ich noch <%= @plant.waterCurrent %>ml Wasser zum Trinken</li>
     <li class="show-plant__ul__li">Ich brauche <%= @plant.sunNeed %>h Sonnenlicht</li>
-    <li class="show-plant__ul__li">Aktuell chille ich im <%= @plant.place %></li>
+    <li class="show-plant__ul__li">Aktuell chille ich hier: <%= @plant.place %></li>
   </ul>
 
   <div class="links--dif"> 
     <%= link_to 'zurück', dashboard_path %>
+   
+   <span class="btn-delete">
+    <%= button_to "Account löschen", plant_path(@plant.id), data: { confirm: "Bist du sicher?" }, method: :delete %>
+  </span>
    <span class="link-button"> <%= link_to 'Pal bearbeiten', edit_plant_path(@plant) %></span>
   </div>
 </section>
