@@ -2,26 +2,28 @@ class Plant < ApplicationRecord
     belongs_to :user
     has_one_attached :image
 
-    validates :realName, :nickName, :waterNeed, :waterCurrent, :sunNeed, :place, :love, presence: true
+    validates :realName, :nickName, :waterNeed, :waterCurrent, :sunNeed, :place, :love, presence: {
+        message: "Feld darf nicht leer sein"
+        }
     validates :realName, :nickName, :place, length: { 
         in: 2..20,
-        message: "Eingabe ist zu lang, max. 20 Zeichen."
+        message: "Eingabe ist zu lang, max. 20 Zeichen"
         }, 
         format: { 
         with: /\A[a-zA-Z \t\r\n\f]+\z/,
-        message: "Nur Buchstaben von A-Z erlaubt."
+        message: "Nur Buchstaben von A-Z erlaubt"
       }
     validates :waterNeed, :waterCurrent, numericality: {
         only_integer: true, greater_than: 0, less_than: 10000,
-        message: "Nur Zahlen zwischen 0 und 10000 erlaubt."
+        message: "Nur Zahlen zwischen 0 und 10000 erlaubt"
     }
     validates :love, numericality: {
         only_integer: true, greater_than: 0, less_than: 11,
-        message: "Nur Zahlen zwischen 0 und 10 erlaubt."
+        message: "Nur Zahlen zwischen 0 und 10 erlaubt"
     }
     validates :sunNeed, numericality: { 
         reater_than: 0, less_than: 25,
-        message: "Nur Zahlen zwischen  0 und 25 erlaubt."
+        message: "Nur Zahlen zwischen  0 und 25 erlaubt"
     }
 
 end
