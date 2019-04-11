@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_08_141635) do
+ActiveRecord::Schema.define(version: 2019_04_11_175136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 2019_04_08_141635) do
   create_table "plants", force: :cascade do |t|
     t.string "realName"
     t.string "nickName"
-    t.integer "waterNeed"
-    t.integer "waterCurrent"
+    t.decimal "waterNeed", precision: 5
+    t.decimal "waterCurrent", precision: 5
     t.float "sunNeed"
     t.string "place"
     t.integer "love"
@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(version: 2019_04_08_141635) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_plants_on_user_id"
+  end
+
+  create_table "reminder_logs", force: :cascade do |t|
+    t.date "last_done_at"
   end
 
   create_table "users", force: :cascade do |t|
