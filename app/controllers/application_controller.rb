@@ -5,12 +5,16 @@ class ApplicationController < ActionController::Base
     protected
 
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up) do |user_params|
-          user_params.permit(:nickName, :email, :password, :password_confirmation)
-        end
-  
-        devise_parameter_sanitizer.permit(:account_update) do |user_params|
-          user_params.permit(:nickName, :email, :current_password, :photo)
-        end
+      devise_parameter_sanitizer.permit(:sign_up) do |user_params|
+        user_params.permit(:nickName, :email, :password, :password_confirmation)
       end
+
+      devise_parameter_sanitizer.permit(:account_update) do |user_params|
+        user_params.permit(:nickName, :email, :photo)
+      end
+    end
+
+    def update_resource(resource, params)
+      resource.update_without_password(params)
+    end
 end
