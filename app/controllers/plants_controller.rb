@@ -1,6 +1,6 @@
 class PlantsController < InheritedResources::Base
+  before_action :set_plant, only: [:show, :edit, :update, :destroy]
   before_action :set_user
-
   def index
     if current_user
       @plants = @user.plants
@@ -11,17 +11,20 @@ class PlantsController < InheritedResources::Base
 
   def new 
     @plant = Plant.new()
-    # plant = new Plant(:realName,:nickName,:waterNeed,:waterCurrent, :sunNeed,:place,:love, :user_id=>@user.id)
-    # plant.!save
+  end
+
+  def edit
   end
 
   def create
     @plant = Plant.new(plant_params.merge(user_id: @user.id))
-        if (@plant.save)
-            redirect_to plant_path(@plant), notice: 'Plant was successfully created!'
-        else
-            render :new
-        end
+    respond_to do | format |
+      if @plant.save
+        format.html {redirect_to @plant, notice: 'Pflanze neu'}
+      else
+        format.html {render :new}
+      end
+    end
   end
 
   def show
@@ -31,7 +34,6 @@ class PlantsController < InheritedResources::Base
       if current_user.id != Plant.find(params[:id]).user_id
         redirect_to plants_path, notice: 'This beautiful plant belongs to someone else 😜'
       else
-        @plant = Plant.find(params[:id])
           if @plant.image.attached?
             @plant_image = polymorphic_url @plant.image
           else
@@ -40,6 +42,30 @@ class PlantsController < InheritedResources::Base
       end
     end
   end
+
+   def update
+    respond_to do | format |
+      if(params[:water])
+        puts 'water is true'
+        @plant.waterCurrent = @plant.waterNeed
+        @plant.save
+        format.html {redirect_to @plant, notice: 'Pflanze wieder fit'}
+      elsif @plant.update(plant_params)
+        puts 'success'
+        format.html {redirect_to @plant, notice: 'Pflanze geändert'}
+      else
+        format.html {render :edit }
+      end
+    end
+   end
+
+    def destroy
+      @plant.destroy
+      respond_to do | format |
+        format.html {redirect_to dashboard_path, notice: 'Pflanze leider verdorben'}
+      end
+    end
+
   private
     def plant_params
       params.require(:plant).permit(:realName, :nickName, :waterNeed, :waterCurrent, :sunNeed, :place, :love, :image)
@@ -49,4 +75,7 @@ class PlantsController < InheritedResources::Base
       @user = current_user
     end
 
+    def set_plant
+      @plant = Plant.find(params[:id])
+    end
 end
