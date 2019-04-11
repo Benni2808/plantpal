@@ -26,8 +26,8 @@ window.addEventListener('load', ()=>{
       newForm.append('image', blob);
       document.getElementById('preview').src = window.URL.createObjectURL(blob);
 
-      console.log(document.getElementById('plant_image').files[0]);
-      var newFile = blobToFile(blob, 'output.png');
+      console.log(image);
+      var newFile = blobToFile(blob, image.name);
       console.log(newFile);
       console.log(newFile.name);
       let current_image = document.getElementById('plant_image');
