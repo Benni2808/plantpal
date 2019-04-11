@@ -30,8 +30,12 @@
         }
     }
 
+    &__h1{
+        margin: 2rem 0;
+    }
+
     &__allPlants {
-        margin: 20px 2%;
+        // margin: 20px 2%;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -83,6 +87,11 @@
             }
         }
     }
+}
+
+.links--dif.dashboard-links {
+    display: flex;
+    justify-self: center;
 }
 
 // Media Queries
