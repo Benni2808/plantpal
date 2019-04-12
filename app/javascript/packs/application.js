@@ -82,5 +82,5 @@ window.addEventListener('load', ()=>{
      */
     console.log(` Node Environment: ${process.env.NODE_ENV}`);
     console.log(` Other Environment ${process.env.PLANT_ID_KEY}`);
-    console.log(PlantIDUsage());
+    // console.log(PlantIDUsage());
 });
