@@ -17,7 +17,8 @@ class PagesController < ApplicationController
 
     # make_post_req_trefle
     puts 'call plant.id api'
-    make_post_req_plant
+    # make_post_req_plant_usage
+    # make_post_req_plant
   end
 
   private
@@ -25,36 +26,18 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
-  def make_post_req 
-    require 'net/http'
+  def make_post_req_plant
+    require 'httparty'
     require 'json'
-    begin
-        uri = URI('https://api.plant.id/check_identifications')
-        res = Net::HTTP.start(uri.hostname, uri.port) do |http|
-          req = Net::HTTP::Post.new(uri, :initheader => {
-            'Content-Type' =>'application/json'
-          })
-          req.body = {
-            "key" => "50vulBj9jUabpDEk3edQYQyTUj7vr694L35NkUSqkgkFDByUov",
-            "ids" => [130772]
-          }.to_json          
-          http.request(req)
-        end
-        if res
-          puts "response #{res.body}"
-          puts JSON.parse(res.body)
-        end
-    rescue => e
-        puts "failed #{e}"
-    end
-    response = HTTParty.get('http://api.stackexchange.com/2.2/questions?site=stackoverflow')
-    puts response.body, response.code, response.message, response.headers.inspect
+
     route = 'https://api.plant.id/check_identifications'
     body = {
       'key' => '50vulBj9jUabpDEk3edQYQyTUj7vr694L35NkUSqkgkFDByUov',
-      'ids' => [130772]
+      'ids' => [130772, 307675]
     }
     response = HTTParty.post(route, body: body.to_json, headers: { 'Content-Type' => 'application/json' })
+    res = response.parsed_response
+    p res
   end
 
   def make_post_req_trefle
@@ -70,7 +53,7 @@ class PagesController < ApplicationController
     puts res.body if res.is_a?(Net::HTTPSuccess)
   end
 
-  def make_post_req_plant
+  def make_post_req_plant_usage
     require 'httparty'
     require 'json'
 
