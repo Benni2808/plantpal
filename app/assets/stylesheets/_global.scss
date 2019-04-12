@@ -226,7 +226,8 @@ h3{
 
 .edit-plant, .new-plant{
   .new_user__container {
-      width: 35rem;
+    width: 100%;
+    max-width: 35rem;
   }
 }
 
@@ -262,8 +263,30 @@ h3{
       }
     }
 
-    .btn-delete{
+    .btn-water{
       margin: 0 1.5rem 0 0;
+      background-color: $color__blue--medium;
+      color: $color__white;
+      padding: 0.5rem 0.8rem;
+      transition: 300ms ease-in-out;
+      text-transform: uppercase;
+      border-radius: 2px;
+      width: fit-content;
+      
+      input{
+        line-height: 1rem;
+      }
+      &:hover{
+        background-color: $color__blue--dark;
+        color: $color__white;
+      }
+      input:hover{
+        color: $color__white;
+      }
+    }
+
+    .btn-delete{
+      // margin: 0 1.5rem 0 0;
       background-color: $color__grey--light;
       padding: 0.5rem 0.8rem;
       transition: 300ms ease-in-out;
@@ -279,6 +302,9 @@ h3{
       }
     }
 }
+.links--dif--delete{
+  margin: 0 0 2rem 0;
+}
 .links--dif{
   display: grid;
   grid-template-columns: 1fr 1fr auto;
@@ -289,7 +315,7 @@ h3{
     align-items: center;
   }
 
-  .btn-delete{
+  .btn-delete, .btn-water{
     grid-column: 2/3;
     display: flex;
     justify-self: flex-end;
@@ -300,6 +326,8 @@ h3{
       grid-column: 3/4;
   }
 }
+
+
 // Water and Love bar
 .progress--water{
   margin: 0 auto;
@@ -367,7 +395,7 @@ h3{
 
     &__logo{
       grid-column: 1/2;
-      margin: 2rem auto 1.5rem;
+      margin: 1.5rem auto 1rem;
       text-align: center;
       font-size: 3rem;
     }
@@ -378,10 +406,10 @@ h3{
 
       &__ul{
         padding-right: 0;
-        margin-bottom: 1rem;
+        // margin-bottom: 1rem;
 
         &__li{
-          margin: 0.6rem 0;
+          margin: 0 0 0.3rem 0;
           width: 100%;
           font-size: 1.3rem;
           
@@ -395,5 +423,31 @@ h3{
 
   .new_user__container {
     width: 16rem;
+  }
+ }
+
+ @media only screen and (max-width:425px){
+  .page-content {
+    margin: 0;
+    display: block;
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  .links--dif{
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 2rem 0 0;
+  
+    a, .btn-delete, .btn-water, .link-button{
+      grid-column: 1/2;
+      display: flex;
+      align-items: center;
+      justify-self: center;
+      margin: 0.5rem 0;
+    }
+  }
+  .links--dif--delete{
+    margin: 0 0 2rem;
   }
  }
