@@ -48,6 +48,7 @@ class PlantsController < InheritedResources::Base
       if(params[:water])
         puts 'water is true'
         @plant.waterCurrent = @plant.waterNeed
+        @plant.love = 10
         @plant.save
         format.html {redirect_to @plant, notice: 'Dein Pal ist wieder fit'}
       # elsif params[:api]

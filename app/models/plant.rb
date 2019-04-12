@@ -18,7 +18,7 @@ class Plant < ApplicationRecord
         message: "Nur Zahlen zwischen 0 und 10000 erlaubt"
     }
     validates :love, numericality: {
-        only_integer: true, greater_than: 0, less_than: 11,
+        only_integer: true, greater_than: -1, less_than: 11,
         message: "Nur Zahlen zwischen 0 und 10 erlaubt"
     }
     validates :sunNeed, numericality: { 
