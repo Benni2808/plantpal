@@ -20,7 +20,7 @@ class PlantsController < InheritedResources::Base
     @plant = Plant.new(plant_params.merge(user_id: @user.id))
     respond_to do | format |
       if @plant.save
-        format.html {redirect_to @plant, notice: 'Pflanze neu'}
+        format.html {redirect_to @plant, notice: 'Neuer Pal erstellt'}
       else
         format.html {render :new}
       end
@@ -29,10 +29,10 @@ class PlantsController < InheritedResources::Base
 
   def show
     if !current_user
-      redirect_to root_path, notice: 'Please login to see your beautiful plants 🌷🌸🌺🌻'
+      redirect_to root_path, notice: 'Bitte logge dich ein um deine Pals zu sehen 🌷🌸🌺🌻'
     else
       if current_user.id != Plant.find(params[:id]).user_id
-        redirect_to plants_path, notice: 'This beautiful plant belongs to someone else 😜'
+        redirect_to plants_path, notice: 'Hey, diese schöne Pflanze gehört jemand anderem 😜'
       else
           if @plant.image.attached?
             @plant_image = polymorphic_url @plant.image
@@ -49,10 +49,10 @@ class PlantsController < InheritedResources::Base
         puts 'water is true'
         @plant.waterCurrent = @plant.waterNeed
         @plant.save
-        format.html {redirect_to @plant, notice: 'Pflanze wieder fit'}
+        format.html {redirect_to @plant, notice: 'Dein Pal ist wieder fit'}
       elsif @plant.update(plant_params)
         puts 'success'
-        format.html {redirect_to @plant, notice: 'Pflanze geändert'}
+        format.html {redirect_to @plant, notice: 'Der Zustand deines Pals hat sich geändert'}
       else
         format.html {render :edit }
       end
@@ -62,7 +62,7 @@ class PlantsController < InheritedResources::Base
     def destroy
       @plant.destroy
       respond_to do | format |
-        format.html {redirect_to dashboard_path, notice: 'Pflanze leider verdorben'}
+        format.html {redirect_to dashboard_path, notice: 'Oh nein, deine Pflanze ist leider verdorben!'}
       end
     end
 
