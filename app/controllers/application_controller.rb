@@ -14,10 +14,6 @@ class ApplicationController < ActionController::Base
         Rails.logger.warn('   sending an e-mail reminder to the owners of the dry plants we just found')
       end
     end    
-
-    def after_sign_in_path_for(resource)
-      users_path
-    end
     
     protected
 
