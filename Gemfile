@@ -26,6 +26,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # devise for login
 gem 'devise'
+gem 'devise-i18n'
 # for permalinks
 gem 'friendly_id'
 # brita can be used in APIs and full rails apps

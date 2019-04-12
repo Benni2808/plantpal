@@ -21,5 +21,8 @@ module Mmp2b
     # the framework and any gems in your application.
 
     config.action_controller.include_all_helpers=true
+
+    # add translation to german
+    config.i18n.default_locale = :de
   end
 end
