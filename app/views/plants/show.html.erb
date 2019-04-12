@@ -50,12 +50,14 @@
   <div class="links--dif"> 
     <%= link_to 'zurück', dashboard_path %>
    
-   <span class="btn-delete">
-    <%= button_to "Pflanze löschen", plant_path(@plant.id), data: { confirm: "Bist du sicher?" }, method: :delete %>
-  </span>
-   <span class="link-button"> <%= link_to 'Pal bearbeiten', edit_plant_path(@plant) %></span>
+    <span class="btn-water"><%= button_to 'Pal gießen', plant_path(@plant), params: {water: true}, method: :patch %></span>
+    <span class="link-button"> <%= link_to 'Pal bearbeiten', edit_plant_path(@plant) %></span>
   </div>
-  <div class="links--dif">
-    <span class="link-button"><%= button_to 'Pal gießen', plant_path(@plant), params: {water: true}, method: :patch %></span>
+
+  <div class="links--dif links--dif--delete">
+    <span class="btn-delete">
+      <%= button_to "Pflanze löschen", plant_path(@plant.id), data: { confirm: "Bist du sicher?" }, method: :delete %>
+    </span>
   </div>
+
 </section>
