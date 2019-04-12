@@ -10,44 +10,77 @@
 
 User.create([
     {
-        email: 'test@example.at',
-        password: 'slfjsflj2441!j',
-        nickName: 'suppiduppipflanzenboy'
+        email: 'test@user.at',
+        password: '123456',
+        nickName: 'pflanzenboy',
+        confirmed_at: Time.now()
     },
     {
-        email: 'test1@example.at',
-        password: 'slfjsflj2441!j',
-        nickName: 'suppiduppipflanzenboyy'
+        email: 'testine@user.at',
+        password: '123456',
+        nickName: 'pflanzengirl',
+        confirmed_at: Time.now()
     },
     {
         email: 'benjamin.joham@gmail.com',
         password: 'test1234',
-        nickName: 'Benni'
+        nickName: 'Benni',
+        confirmed_at: Time.now()
     }
 ])
 
-# Plant.create([
-#     {
-#         realName: 'Rose',
-#         nickName: 'Lisa',
-#         waterNeed: 1400,
-#         waterCurrent: 600,
-#         sunNeed: 2.5,
-#         place: 'Küche',
-#         love: 6,
-#         user_id: 4
-#     },
-#     {
-#         realName: 'Kaktus',
-#         nickName: 'Max',
-#         waterNeed: 1200,
-#         waterCurrent: 600,
-#         sunNeed: 2.5,
-#         place: 'Schlafzimmer',
-#         love: 3,
-#         user_id: 4
-#     }
-# ])
+Plant.create([
+    {
+        realName: 'Rose',
+        nickName: 'Lisa',
+        waterNeed: 1400,
+        waterCurrent: 600,
+        sunNeed: 2.5,
+        place: 'Küche',
+        love: 6,
+        user_id: 1
+    },
+    {
+        realName: 'Kaktus',
+        nickName: 'Max',
+        waterNeed: 1200,
+        waterCurrent: 600,
+        sunNeed: 2.5,
+        place: 'Schlafzimmer',
+        love: 3,
+        user_id: 1
+    },
+    {
+        realName: 'Rose',
+        nickName: 'Lisa',
+        waterNeed: 1400,
+        waterCurrent: 600,
+        sunNeed: 2.5,
+        place: 'Küche',
+        love: 6,
+        user_id: 2
+    },
+    {
+        realName: 'Kaktus',
+        nickName: 'Max',
+        waterNeed: 1200,
+        waterCurrent: 600,
+        sunNeed: 2.5,
+        place: 'Schlafzimmer',
+        love: 3,
+        user_id: 2
+    },
+    {
+        realName: 'Rose',
+        nickName: 'Lisa',
+        waterNeed: 1400,
+        waterCurrent: 600,
+        sunNeed: 2.5,
+        place: 'Küche',
+        love: 6,
+        user_id: 3
+    }
+])
 
 # Plant.create([
 #     {
