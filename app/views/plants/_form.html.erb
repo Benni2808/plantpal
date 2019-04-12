@@ -58,6 +58,7 @@
     <h2 class="field_with_errors__msg"><%= get_error_for(plant, :image) %></h2>
     <%= form.file_field :image %>
   </div>
+  <img id="preview" style="width:400px;">
 
   <div class="new_user__submit-button">
     <%= form.submit "Pal hinzufügen" %>

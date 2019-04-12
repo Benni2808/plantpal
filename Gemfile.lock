@@ -104,6 +104,8 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.8.0)
+      devise (>= 4.6)
     dokku-cli (0.4.0)
       thor (~> 0.19)
     elasticsearch (6.3.0)
@@ -343,6 +345,7 @@ DEPENDENCIES
   brita
   byebug
   devise
+  devise-i18n
   dokku-cli
   friendly_id
   image_processing (~> 1.2)

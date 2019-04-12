@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :plants, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :validatable
 
   has_one_attached :photo
 
@@ -14,8 +14,8 @@ class User < ApplicationRecord
     message: "Eingabe zwischen 2 und max. 20 Zeichen"
     }, 
     format: { 
-    with: /\A[a-zA-Z \t\r\n\f]+\z/,
-    message: "Nur Buchstaben von A-Z erlaubt"
+    with: /\A[[:alpha:] \t\r\n\f]+\z/,
+    message: "Nur Buchstaben des Alphabetes erlaubt"
   }
   validates :email, uniqueness: true
   validates :encrypted_password, length: { 
