@@ -32,19 +32,22 @@
 
     &__h1{
         margin: 2rem 0;
+        text-align: center;
     }
 
     &__allPlants {
-        // margin: 20px 2%;
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: flex-start;
+        margin: auto;
+        width: 94%;
+        margin: 0 3%;
+
+
     
         &__plant {
-            min-width:20rem;
-            max-width: 23rem;
-            height: auto;
             text-decoration: none;
             margin: 0 1rem;
             
