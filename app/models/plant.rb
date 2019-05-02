@@ -14,8 +14,12 @@ class Plant < ApplicationRecord
         message: "Nur Buchstaben des Alphabetes erlaubt"
       }
     validates :waterNeed, :waterCurrent, numericality: {
-        only_integer: true, greater_than: 0, less_than: 10000,
+        only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 10000,
         message: "Nur Zahlen zwischen 0 und 10000 erlaubt"
+    }
+    validates :waterCurrent, numericality: {
+        less_than_or_equal_to: :waterNeed,
+        message: "Der aktuelle Wasserstand darf nicht größer als der Wasserstand pro Woche"
     }
     validates :love, numericality: {
         only_integer: true, greater_than: -1, less_than: 11,
