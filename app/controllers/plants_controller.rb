@@ -47,10 +47,15 @@ class PlantsController < InheritedResources::Base
     respond_to do | format |
       if(params[:water])
         puts 'water is true'
-        @plant.waterCurrent = @plant.waterNeed
-        @plant.love = 10
-        @plant.save
-        format.html {redirect_to @plant, notice: 'Dein Pal ist wieder fit'}
+
+        if @plant.waterCurrent == @plant.waterNeed
+          format.html {redirect_to @plant, notice: 'Dein Pal ist derzeit nicht durstig'}
+        else
+          @plant.waterCurrent = @plant.waterNeed
+          @plant.love = 10
+          @plant.save
+          format.html {redirect_to @plant, notice: 'Dein Pal ist wieder fit'}
+        end
       # elsif params[:api]
       #   puts 'api is true'
       #   image_to_base64
