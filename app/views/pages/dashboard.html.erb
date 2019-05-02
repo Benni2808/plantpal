@@ -16,7 +16,13 @@
     <%#= link_to edit_user_registration_path, {:class => 'user__image-a'} do %>
     <%# end %>
   </div>
-  <h1 class="my-plants__h1">Meine Pals</h1>
+  <h1 class="my-plants__h1">
+        <% if(@user.plants.count <= 2)%>
+          Mein Pal
+        <% else %>
+          Meine Pals
+        <% end %>
+  </h1>
 
   <section id='myPlants' class='my-plants__allPlants'>
 
