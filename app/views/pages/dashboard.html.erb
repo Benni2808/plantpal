@@ -3,7 +3,14 @@
   <div class="my-plants__user">
     <div class="my-plants__user__details">
       <h2 class="my-plants__user__details__nickname"> <%= @user.nickName %></h2>
-      <p class="my-plants__user__details__plantcount"> <%= @user.plants.count %> Pflanzen</p>
+      <p class="my-plants__user__details__plantcount"> 
+        <%= @user.plants.count %>
+        <% if(@user.plants.count == 1)%>
+          Pflanze
+        <% else %>
+          Pflanzen
+        <% end %>
+      </p>
     </div>
     <%= image_tag(@user_photo, :size => "150x150", :alt => @user.nickName, :class=>'user-image', :style=>'border-radius:50%;') %>
     <%#= link_to edit_user_registration_path, {:class => 'user__image-a'} do %>
