@@ -61,6 +61,8 @@
                 line-height: 2rem;
                 text-align: center;
                 margin: 0.7rem 0 0.1rem;
+                text-decoration: none;
+                color: $color__black;
             }
 
             &__love{
@@ -87,6 +89,10 @@
                 &:last-child{
                     margin: 0.3rem 0 5rem 0;
                 }
+            }
+
+            a:link {
+                text-decoration: none;
             }
         }
     }
