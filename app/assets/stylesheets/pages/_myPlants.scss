@@ -39,17 +39,21 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
+        // justify-content: space-between;
         justify-content: center;
         align-items: flex-start;
         margin: auto;
-        width: 94%;
+        // width: 94%;
+        width: 100%;
         margin: 0 3%;
-
-
     
         &__plant {
             text-decoration: none;
             margin: 0 1rem;
+
+            min-width:20rem;
+            max-width: 23rem;
+            height: auto;
             
             &-image {
                 width: 100%;
