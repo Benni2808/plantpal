@@ -9,18 +9,17 @@ class User < ApplicationRecord
   validates :nickName, :email, :password, :encrypted_password, presence: {
     message: "Feld darf nicht leer sein"
   }
-  validates :nickName, length: { 
+  validates :nickName, length: {
     in: 2..20,
     message: "Eingabe zwischen 2 und max. 20 Zeichen"
-    }, 
-    format: { 
-    with: /\A[[:alpha:] \t\r\n\f]+\z/,
-    message: "Nur Buchstaben des Alphabetes erlaubt"
-  }
+  },
+                       format: {
+                         with: /\A[[:alpha:] \t\r\n\f]+\z/,
+                         message: "Nur Buchstaben des Alphabetes erlaubt"
+                       }
   validates :email, uniqueness: true
-  validates :encrypted_password, length: { 
+  validates :encrypted_password, length: {
     minimum: 6,
     message: "Eingabe muss mind. 6 Zeichen haben"
-    }
-
+  }
 end

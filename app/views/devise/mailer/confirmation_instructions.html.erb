@@ -1,6 +1,8 @@
-<section class="page-content">
-<h2>Hey <%= @email %>!</h2>
+<section>
+<h2>Hey <%= @resource.nickName %>,</h2>
 
+<h3>Herzlich Wilkommen bei PlantPal!</h3>
+<!--- <img src="plantpal_logo.png" alt="Kaktus Cartoon"> --->
 <p>Über folgenden Link kannst du deine E-Mail Adresse bestätigen: </p>
 
 <p><%= link_to 'Account bestätigen', confirmation_url(@resource, confirmation_token: @token) %></p>

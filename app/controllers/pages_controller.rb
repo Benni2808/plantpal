@@ -22,6 +22,7 @@ class PagesController < ApplicationController
   end
 
   private
+
   def set_user
     @user = current_user
   end
@@ -46,7 +47,7 @@ class PagesController < ApplicationController
     require 'uri'
 
     uri = URI('https://trefle.io/api/plants/137119')
-    params = { :token=> 'MlBBVkRPaEl4cnZmL2xYMFlpN1VPUT09' }
+    params = { :token => 'MlBBVkRPaEl4cnZmL2xYMFlpN1VPUT09' }
     uri.query = URI.encode_www_form(params)
 
     res = Net::HTTP.get_response(uri)

@@ -27,12 +27,14 @@
     <%= form.number_field :waterNeed, placeholder: "150"  %>
   </div>
 
-  <div class="new_user__container new_plant__water-current new_user__pw">
-    <%= form.label :waterCurrent, 'Aktueller Wasserstand'%>
-    <p class="new_user__pw__p">(in ml)</p>
-    <h2 class="field_with_errors__msg"><%= get_error_for(plant, :waterCurrent) %></h2>
-    <%= form.number_field :waterCurrent, placeholder: "100"  %>
-  </div>
+  <%if !edit%>
+    <div class="new_user__container new_plant__water-current new_user__pw">
+      <%= form.label :waterCurrent, 'Aktueller Wasserstand'%>
+      <p class="new_user__pw__p">(in ml)</p>
+      <h2 class="field_with_errors__msg"><%= get_error_for(plant, :waterCurrent) %></h2>
+      <%= form.number_field :waterCurrent, placeholder: "100"  %>
+    </div>
+  <% end %>
 
   <div class="new_user__container new_plant__sun-need new_user__pw">
     <%= form.label :sunNeed, 'Direktes Sonnenlicht pro Tag' %>
@@ -47,11 +49,13 @@
     <%= form.text_field :place, placeholder: "Schlafzimmer"  %>
   </div>
 
-  <div class="new_user__container new_plant__place">
-    <%= form.label :love, 'Wie geht es deiner Pflanze auf einer Skala von 1-10?'%>
-    <h2 class="field_with_errors__msg"><%= get_error_for(plant, :love) %></h2>
-    <%= form.number_field :love, placeholder: "7"%>
-  </div>
+  <%if !edit%>
+    <div class="new_user__container new_plant__place">
+      <%= form.label :love, 'Wie geht es deiner Pflanze auf einer Skala von 1-10?'%>
+      <h2 class="field_with_errors__msg"><%= get_error_for(plant, :love) %></h2>
+      <%= form.number_field :love, placeholder: "7"%>
+    </div>
+  <%end%>
 
   <div class="new_user__container new_plant__love">
     <%= form.label :image, 'Hier kannst du ein Bild deiner Pflanze hochladen!'%>
@@ -61,6 +65,6 @@
   <img id="preview" style="width:400px;">
 
   <div class="new_user__submit-button">
-    <%= form.submit "Pal hinzufügen" %>
+    <%= form.submit "Fertig!" %>
   </div>
 <% end %>

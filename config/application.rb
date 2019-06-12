@@ -20,7 +20,7 @@ module Mmp2b
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    config.action_controller.include_all_helpers=true
+    config.action_controller.include_all_helpers = true
 
     # add translation to german
     config.i18n.default_locale = :de
