@@ -82,6 +82,8 @@ group :development do
   gem 'solargraph'
   # use dokku
   gem 'dokku-cli'
+  # for performance
+  gem 'rack-mini-profiler', require: false
 end
 
 group :production do
