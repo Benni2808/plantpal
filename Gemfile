@@ -47,7 +47,7 @@ gem "mini_magick"
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # new Relic for monitoring
-#gem 'newrelic_rpm'
+gem 'newrelic_rpm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -83,7 +83,7 @@ group :development do
   # use dokku
   gem 'dokku-cli'
   # for performance
-  #gem 'rack-mini-profiler', require: false
+  gem 'rack-mini-profiler', require: false
 end
 
 group :production do
