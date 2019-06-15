@@ -1,0 +1,15 @@
+<header class="navigation">
+<div class="navigation__logo"><%= link_to 'PlantPal', root_path %></div>
+<nav class="navigation__nav">
+    <ul class="navigation__nav__ul">
+        <% if !current_user %>
+            <%# <li class="navigation__nav__ul__li navigation__nav__ul__li--user"> Du bist nicht eingeloggt</li> %>
+            <li class="navigation__nav__ul__li"> <%= link_to 'Registrieren', new_user_registration_path %> </li>
+            <li class="navigation__nav__ul__li"> <%= link_to 'Anmelden', new_user_session_path %> </li>
+        <% else %>
+            <li class="navigation__nav__ul__li navigation__nav__ul__li--user"> Hey <%=current_user.nickName %>! </li>
+            <li class="navigation__nav__ul__li"> <%= link_to 'Meine Pflanzen', dashboard_path %> </li>
+            <li class="navigation__nav__ul__li"> <%= button_to 'Abmelden', destroy_user_session_path, method: :delete %> </li>
+        <% end %>
+    <ul>
+</header>

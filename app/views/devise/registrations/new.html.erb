@@ -1,38 +1,43 @@
-<h2>Sign up</h2>
+<section class="page-content">
+<h1>Werde ein Teil von PlantPal</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <%
-=begin%>
- <div class="field">
-    <%= f.label :nickname %> <br />
-    <%= f.text_field :nickname %>
+ <div class="new_user__container new_user__name">
+    <%= f.label :nickName, 'Name' %>
+    <h2 class="field_with_errors__msg"><%= get_error_for_user(resource, :nickName) %> </h2>
+    <%= f.text_field :nickName, placeholder: "Dani Sahne"  %>
   </div> 
-<%
-=end%>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class="new_user__container new_user__mail">
+    <%= f.label :email, 'E-Mail', style:"text-transform: capitalize;" %>
+    <h2 class="field_with_errors__msg"><%= get_error_for_user(resource, :email) %> </h2>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "dani@sahne.com"  %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
+  <div class="new_user__container new_user__pw">
+    <%= f.label :password, 'Passwort' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+      <p class="new_user__pw__p">(mind. <%= @minimum_password_length %> Zeichen)</p>
+    <% end %>
+    <h2 class="field_with_errors__msg"><%= get_error_for_user(resource, :password) %> </h2>
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+  <div class="new_user__container new_user__pw-confirmation">
+    <%= f.label :password_confirmation, 'Passwort' %>
+    <p class="new_user__pw__p">(wiederholen)</p>
+    <h2 class="field_with_errors__msg"><%= get_error_for_user(resource, :password_confirmation) %> </h2>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <div class="new_user__submit-button">
+    <%= f.submit "Registrieren" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<div class="link-to-login">
+  <p>Du hast schon einen Account? Hier gehts zum  <%= render "devise/shared/links" %></p>
+</div>
+</section>

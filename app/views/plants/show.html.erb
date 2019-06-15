@@ -1,0 +1,63 @@
+<section class="page-content show-plant">
+  <p id="notice"><%= notice %></p>
+
+  <h1 class="show-plant__h1"><%= @plant.nickName %></h1>
+  <p class="show-plant__p">
+    <%= @plant.realName %>
+  </p>
+  
+  <% @waterLevel = ((100.0 / @plant.waterNeed) * @plant.waterCurrent).round %>
+  <div class="show-plant__waterbar progress--water" style="--progress-level:<%= @waterLevel %>%"></div>
+      
+  <div class="show-plant__love progress--love">
+    <p>Zufriedenheit:</p>
+    <% @plant.love.times do |i| %>
+      <p>♥️</p>
+    <% end %>
+  </div>
+
+  <div class="show-plant__lovestatus"> 
+    <% if @plant.love < 2  %>
+      <p>HILFE!</p>
+    <% elsif @plant.love < 3  %>
+      <p>Ich fühle mich schlecht.</p>
+    <% elsif @plant.love < 5  %>
+      <p>Es könnte mir besser gehen...</p>
+    <% elsif @plant.love  < 6  %>
+      <p>Mir geht es ganz gut.</p>
+    <% elsif @plant.love < 8  %>
+      <p>Ich bin zufrieden.</p>
+    <% elsif @plant.love < 10  %>
+      <p>Ich bin happy.</p>
+    <% elsif @plant.love < 11  %>
+      <p>Ich bin überglücklich.</p>
+    <% end %>
+  </div>
+  
+  <div class="show-plant__pic">
+    <%= image_tag(@plant_image, style:'width:100%') %>  
+  </div> 
+
+  <h2 class="show-plant__h2">Pflegehinweise:</h2>
+
+  <ul class="show-plant__ul">
+    <li class="show-plant__ul__li">Gieß mich mit <%= @plant.waterNeed %>ml Wasser</li>
+    <li class="show-plant__ul__li">Jetzt habe ich noch <%= @plant.waterCurrent %>ml Wasser zum Trinken</li>
+    <li class="show-plant__ul__li">Ich brauche <%= @plant.sunNeed %>h Sonnenlicht</li>
+    <li class="show-plant__ul__li">Aktuell chille ich hier: <%= @plant.place %></li>
+  </ul>
+
+  <div class="links--dif"> 
+    <%= link_to 'zurück', dashboard_path %>
+   
+    <span class="btn-water"><%= button_to 'Pal gießen', plant_path(@plant), params: {water: true}, method: :patch %></span>
+    <span class="link-button"> <%= link_to 'Pal bearbeiten', edit_plant_path(@plant) %></span>
+  </div>
+
+  <div class="links--dif links--dif--delete">
+    <span class="btn-delete">
+      <%= button_to "Pflanze löschen", plant_path(@plant.id), data: { confirm: "Bist du sicher?" }, method: :delete %>
+    </span>
+  </div>
+
+</section>

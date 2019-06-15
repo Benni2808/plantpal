@@ -26,6 +26,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # devise for login
 gem 'devise'
+gem 'devise-i18n'
 # for permalinks
 gem 'friendly_id'
 # brita can be used in APIs and full rails apps
@@ -35,11 +36,18 @@ gem 'searchkick'
 # admin backend
 gem 'activeadmin'
 
+# für hhtp request
+gem 'httparty'
+
 # Use Active Storage variant
 gem 'image_processing', '~> 1.2'
-
+gem "mini_magick"
+# gem 'carrierwave', '~> 1.0'
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.4.1', require: false
+gem 'bootsnap', '>= 1.4.2', require: false
+
+# new Relic for monitoring
+gem 'newrelic_rpm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -71,12 +79,11 @@ group :development do
   # open emails in browser
   gem 'dokku-cli'
   gem 'letter_opener'
+  gem 'solargraph'
   # use dokku
   gem 'dokku-cli'
-end
-
-group :production do
-  gem 'rails_12factor'
+  # for performance
+  gem 'rack-mini-profiler', require: false
 end
 
 group :production do

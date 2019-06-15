@@ -1,0 +1,70 @@
+<%= form_with(model: plant, local: true) do |form| %>
+  <% if plant.errors.any? %>
+    <div id="error_explanation">
+      <p>
+        Pflanze konnte nicht gespeichert werden!
+      </p>
+
+    </div>
+  <% end %>
+
+  <div class="new_user__container new_plant__real-name">
+    <%= form.label :realName, 'Botanische Bezeichnung:'%>
+    <h2 class="field_with_errors__msg"><%= get_error_for(plant, :realName) %></h2>
+    <%= form.text_field :realName, placeholder: "Monstera deliciosa"  %>
+  </div>
+
+  <div class="new_user__container new_plant__nick-name">
+    <%= form.label :nickName, 'Nickname deiner Pflanze:'%>
+    <h2 class="field_with_errors__msg"><%= get_error_for(plant, :nickName) %></h2>
+    <%= form.text_field :nickName, placeholder: "Bubba"  %>
+  </div>
+
+  <div class="new_user__container new_plant__water-need new_user__pw">
+    <%= form.label :waterNeed, 'Wasser pro Woche'%>
+    <p class="new_user__pw__p">(in ml)</p>
+    <h2 class="field_with_errors__msg"><%= get_error_for(plant, :waterNeed) %></h2>
+    <%= form.number_field :waterNeed, placeholder: "150"  %>
+  </div>
+
+  <%if !edit%>
+    <div class="new_user__container new_plant__water-current new_user__pw">
+      <%= form.label :waterCurrent, 'Aktueller Wasserstand'%>
+      <p class="new_user__pw__p">(in ml)</p>
+      <h2 class="field_with_errors__msg"><%= get_error_for(plant, :waterCurrent) %></h2>
+      <%= form.number_field :waterCurrent, placeholder: "100"  %>
+    </div>
+  <% end %>
+
+  <div class="new_user__container new_plant__sun-need new_user__pw">
+    <%= form.label :sunNeed, 'Direktes Sonnenlicht pro Tag' %>
+    <p class="new_user__pw__p">(in Stunden)</p>
+    <h2 class="field_with_errors__msg"><%= get_error_for(plant, :sunNeed) %></h2>
+    <%= form.text_field :sunNeed, placeholder: "6" %>
+  </div>
+
+  <div class="new_user__container new_plant__sun-place">
+    <%= form.label :place, 'Wo steht deine Pflanze gerade?'%>
+    <h2 class="field_with_errors__msg"><%= get_error_for(plant, :place) %></h2>
+    <%= form.text_field :place, placeholder: "Schlafzimmer"  %>
+  </div>
+
+  <%if !edit%>
+    <div class="new_user__container new_plant__place">
+      <%= form.label :love, 'Wie geht es deiner Pflanze auf einer Skala von 1-10?'%>
+      <h2 class="field_with_errors__msg"><%= get_error_for(plant, :love) %></h2>
+      <%= form.number_field :love, placeholder: "7"%>
+    </div>
+  <%end%>
+
+  <div class="new_user__container new_plant__love">
+    <%= form.label :image, 'Hier kannst du ein Bild deiner Pflanze hochladen!'%>
+    <h2 class="field_with_errors__msg"><%= get_error_for(plant, :image) %></h2>
+    <%= form.file_field :image %>
+  </div>
+  <img id="preview" style="width:400px;">
+
+  <div class="new_user__submit-button">
+    <%= form.submit "Fertig!" %>
+  </div>
+<% end %>

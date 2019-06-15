@@ -1,28 +1,14 @@
-<h1>Pages#home</h1>
+<section class="page-content home">
+<h1 class="home__h1">Hey du!</h1>
 
+ <div class="home__pic">
+    <%= image_tag('plantpal_logo.png', type: 'image/png') %>
+</div> 
 
-<% if current_user%>
-<%= button_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    <br>
-    <%= link_to 'Login', new_user_session_path%>
-<% end %>  
-<%
-=begin%>
- <h2> <%= current_user %> </h2>
+<h2 class="home__h2">Erwecke deinen grünen Daumen mit PlantPal</h2>
 
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %> 
-<%
-=end%>
-
-<%
-=begin%>
- <%= if current_user.id > 0 %>
-<%= else %>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    <br>
-    <%= link_to 'Login', new_user_session_path%>
-<%= end %>  
-<%
-=end%>
+<p class="home__p">Wir helfen dir, dich richtig um deine Hauspflanzen zu kümmern. 
+Füge deine Lieblinge einfach in deinem Profil hinzu und los gehts! 
+Du erhältst Erinnerungen deine Pals zu gießen, sie in ein sonniges/schattiges Plätzchen zu stellen 
+und ihnen Liebe und Aufmerksamkeit zu schenken. Gärtnern war noch nie so einfach!</p>
+</section>

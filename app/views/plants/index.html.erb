@@ -1,0 +1,42 @@
+<section class="page-content my-plants">
+  <p id="notice"><%= notice %></p>
+
+  <h1 class="my-plants__h1">Meine Pals</h1>
+
+  <section id='myPlants' class='my-plants__allPlants'>
+
+    <% @plants.each do |plant| %>
+    <% @waterLevel = ((100.0 / plant.waterNeed) * plant.waterCurrent).round %>
+      <% if plant.image.attached? %>
+        <% @image = polymorphic_url plant.image%>
+      <% else %>
+        <% @image = '/assets/default.jpg' %>
+      <% end %>
+      
+      <div class="my-plants__allPlants__plant">
+        <%= link_to plant_path(plant.id), {:class => 'my-plants__allPlants__plant-a'} do %>
+          <%= image_tag(@image, :size => "400x400", :alt => plant.nickName, :class=>'my-plants__allPlants__plant-image') %>
+        <% end %>
+
+        <h2 class="my-plants__allPlants__plant__nickname"><%= plant.nickName %></h2>
+        <p class="my-plants__allPlants__plant--desc"><%= plant.realName %></p> 
+
+        <div class="progress--love my-plants__allPlants__plant__love">
+          <% plant.love.times do |i| %>
+            <p>♥️</p>
+          <% end %>
+        </div>
+
+        <div class="progress--water my-plants__allPlants__plant__water" style="--progress-level:<%= @waterLevel %>%"></div>
+        <p class="my-plants__allPlants__plant--desc"><%= plant.waterCurrent %> / <%= plant.waterNeed %> ml</p>
+
+        <p class="my-plants__allPlants__plant--desc">braucht <%= plant.sunNeed %>h Sonne</p>
+        <p class="my-plants__allPlants__plant--desc"><%= plant.place %></p>
+      </div>
+    <% end %>
+  </section>
+
+  <div class="links--dif"> 
+    <span class="link-button"><%= link_to 'Pflanze hinzufügen', new_plant_path %></span>
+  </div>
+</section>
