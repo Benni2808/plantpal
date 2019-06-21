@@ -56,7 +56,7 @@
 
   <div class="links--dif links--dif--delete">
     <span class="btn-delete">
-      <%= button_to "Pflanze löschen", plant_path(@plant.id), data: { confirm: "Bist du sicher?" }, method: :delete %>
+      <%= button_to "Pflanze löschen", plant_path(@plant), :onclick=> "return confirm('Bist du sicher?')", method: :delete %>
     </span>
   </div>
 
