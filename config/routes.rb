@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :plants
+  resources :plants do
+    member do
+      patch 'water'
+    end
+  end
   # get 'sessions/destroy'
   root to: 'pages#home'
   get '/picture' => 'pages#picture'
