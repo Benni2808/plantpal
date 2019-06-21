@@ -56,10 +56,6 @@ class PlantsController < InheritedResources::Base
           @plant.save
           format.html { redirect_to @plant, notice: 'Dein Pal ist wieder fit' }
         end
-      # elsif params[:api]
-      #   puts 'api is true'
-      #   image_to_base64
-      #   format.html {redirect_to @plant, notice: 'Abfrage gestartet'}
       elsif @plant.update(plant_params)
         puts 'success'
         format.html { redirect_to @plant, notice: 'Der Zustand deines Pals hat sich geändert' }
@@ -87,7 +83,8 @@ class PlantsController < InheritedResources::Base
   end
 
   def set_plant
-    @plant = Plant.find(params[:id])
+    @plant = current_user.plants.find(params[:id])
+    # @plant = Plant.find(params[:id])
   end
 
   # def image_to_base64
