@@ -1,5 +1,5 @@
 class PlantsController < InheritedResources::Base
-  before_action :set_plant, only: [:show, :edit, :update, :destroy]
+  before_action :set_plant, only: [:show, :edit, :update, :destroy, :water]
   before_action :set_user
   def index
     if current_user
@@ -45,23 +45,10 @@ class PlantsController < InheritedResources::Base
 
   def update
     respond_to do |format|
-      if (params[:water])
-        puts 'water is true'
-
-        if @plant.waterCurrent == @plant.waterNeed
-          format.html { redirect_to @plant, notice: 'Dein Pal ist derzeit nicht durstig' }
-        else
-          @plant.waterCurrent = @plant.waterNeed
-          @plant.love = 10
-          @plant.save
-          format.html { redirect_to @plant, notice: 'Dein Pal ist wieder fit' }
-        end
-      elsif @plant.update(plant_params)
+      @plant.update(plant_params)
         puts 'success'
         format.html { redirect_to @plant, notice: 'Der Zustand deines Pals hat sich geändert' }
-      else
         format.html { render :edit }
-      end
     end
   end
 
@@ -69,6 +56,19 @@ class PlantsController < InheritedResources::Base
     @plant.destroy
     respond_to do |format|
       format.html { redirect_to dashboard_path, notice: 'Oh nein, deine Pflanze ist leider verdorben!' }
+    end
+  end
+
+  def water
+    respond_to do |format|
+      if @plant.waterCurrent == @plant.waterNeed
+        format.html { redirect_to plant_path(@plant), notice: 'Dein Pal ist derzeit nicht durstig' }
+      else
+        @plant.waterCurrent = @plant.waterNeed
+        @plant.love = 10
+        @plant.save
+        format.html { redirect_to plant_path(@plant), notice: 'Dein Pal ist wieder fit' }
+      end
     end
   end
 
