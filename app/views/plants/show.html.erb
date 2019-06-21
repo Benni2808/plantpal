@@ -50,7 +50,7 @@
   <div class="links--dif"> 
     <%= link_to 'zurück', dashboard_path %>
    
-    <span class="btn-water"><%= button_to 'Pal gießen', plant_path(@plant), params: {water: true}, method: :patch %></span>
+    <span class="btn-water"><%= button_to 'Pal gießen', water_plant_path(@plant), method: :patch %></span>
     <span class="link-button"> <%= link_to 'Pal bearbeiten', edit_plant_path(@plant) %></span>
   </div>
 
