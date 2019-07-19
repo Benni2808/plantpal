@@ -4,8 +4,8 @@
 Throughout the whole project we do pair programming.
 
 # Dokku
+https://plantpal.projects.multimediatechnology.at/
 
-Verbindung kann nicht hergestellt werden..
 **Brigitte fragen**
 
 ## Rubocop Options
